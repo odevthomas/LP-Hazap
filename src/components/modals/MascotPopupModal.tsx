@@ -19,7 +19,7 @@ const MascotPopupModal = ({ visible, onClose, onScrollToComputers }: MascotPopup
         <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 z-10">
           <div className="relative">
             <img 
-              src="/lovable-uploads/13f250a3-9d22-4535-a3be-9b19c4e05cad.png" 
+              src="/vendas/mascote.png" 
               alt="Mascote Hazap" 
               className="w-40 h-40 rounded-full object-cover animate-bounce border-6 border-orange-500 shadow-2xl bg-white p-2"
               style={{

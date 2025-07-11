@@ -1,3 +1,4 @@
+'use client';
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
@@ -9,38 +10,46 @@ interface HeroSectionProps {
 
 const HeroSection = ({ onShowMascotPopup }: HeroSectionProps) => (
   <section className="relative h-screen flex items-center justify-center overflow-hidden rounded-b-3xl">
+    {/* Fundo com vídeo e overlay */}
     <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-black to-orange-900/30 rounded-b-3xl">
       <div className="absolute inset-0 bg-black/60 rounded-b-3xl"></div>
-      <video 
-        autoPlay 
-        muted 
-        loop 
+      <video
+        autoPlay
+        muted
+        loop
         playsInline
         className="w-full h-full object-cover opacity-40 rounded-b-3xl"
       >
-        <source src="https://iyqujwbqfomznelsvebl.supabase.co/storage/v1/object/public/videos-hazap//hero-horizontal-videos.mp4" type="video/mp4" />
+        <source
+          src="https://iyqujwbqfomznelsvebl.supabase.co/storage/v1/object/public/videos-hazap//hero-horizontal-videos.mp4"
+          type="video/mp4"
+        />
       </video>
     </div>
-    
-    <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+
+    {/* Conteúdo */}
+    <div className="relative z-10 text-center px-4 sm:px-8 md:px-12 max-w-6xl mx-auto">
       <div className="mb-12 animate-fade-in">
-        <img 
-          src="/lovable-uploads/3fbca5f5-cb6e-4f54-b24a-4c4f6fb2394e.png" 
-          alt="Hazap Logo" 
-          className="h-44 mx-auto mb-8 drop-shadow-2xl"
+        <img
+          src="/vendas/logo.png"
+          alt="Hazap Logo"
+          className="h-36 md:h-44 mx-auto mb-8 drop-shadow-2xl"
         />
-        <h1 className="text-3xl md:text-5xl font-bold mb-8 animate-fade-in animation-delay-300 leading-tight">
-          Eleita a melhor loja de informática do<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-            Interior de São Paulo
+
+          <h1 className="text-5xl md:text-7xl font-black mb-8 text-twhite  from-white via-red-400 to-white ">
+          A <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">referência em tecnologia</span> no
+          <br className="hidden sm:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700">
+            interior de São Paulo
           </span>
         </h1>
       </div>
-      
+
+      {/* Botão principal */}
       <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-        <Button 
+        <Button
           onClick={onShowMascotPopup}
-          className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-6 px-10 text-lg rounded-full transform hover:scale-105 transition-all duration-300 shadow-xl shadow-green-500/25 backdrop-blur-sm"
+          className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-5 px-10 text-lg rounded-full transform hover:scale-105 transition-all duration-300 shadow-xl shadow-green-500/25 backdrop-blur-sm"
         >
           <WhatsAppIcon />
           FALE COM ESPECIALISTA

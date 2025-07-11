@@ -4,7 +4,6 @@ import MascotPopupModal from '@/components/modals/MascotPopupModal';
 import CarouselSection from '@/components/sections/CarouselSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import ComponentsSection from '@/components/sections/ComponentsSection';
-import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/sections/Footer';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 
@@ -61,9 +60,10 @@ const Index = () => {
       <CarouselSection />
       <ServicesSection />
       <ComponentsSection />
-      <ContactSection />
-      <Footer onScrollToTop={scrollToTop} />
       <FloatingWhatsApp />
+
+      <Footer onScrollToTop={scrollToTop} />
+      
     </div>
   );
 };

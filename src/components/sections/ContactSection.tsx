@@ -1,3 +1,4 @@
+'use client'
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
@@ -21,9 +22,9 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-24 px-6 bg-gradient-to-br from-black to-slate-900">
+    <section className="py-24 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-bold text-center mb-20 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+          <h2 className="text-5xl md:text-7xl font-black mb-8 text-twhite  from-white via-red-400 to-white animate-pulse">
           Vamos Conversar?
         </h2>
         
@@ -33,30 +34,33 @@ const ContactSection = () => {
             <h3 className="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
               Contatos Rápidos
             </h3>
-            
-            <div className="flex items-center space-x-6 p-6 bg-gradient-to-r from-slate-800/30 to-black/30 rounded-2xl border border-orange-500/20 backdrop-blur-sm">
-              <div className="p-3 rounded-xl bg-gradient-to-r from-orange-500/20 to-orange-600/20 border border-orange-500/30">
-                <Mail className="text-orange-400" size={24} />
+
+            {/* E-mail */}
+            <div className="flex items-center space-x-6 p-6 bg-gradient-to-r from-black/30 to-slate-800/30 rounded-2xl border border-orange-500/30 backdrop-blur-sm hover:scale-[1.02] transition-all">
+              <div className="p-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 border border-orange-500">
+                <Mail className="text-white" size={24} />
               </div>
               <div>
                 <p className="font-semibold text-white text-lg">E-mail</p>
                 <p className="text-gray-300">contato@hazap.com.br</p>
               </div>
             </div>
-            
-            <div className="flex items-center space-x-6 p-6 bg-gradient-to-r from-slate-800/30 to-black/30 rounded-2xl border border-orange-500/20 backdrop-blur-sm">
-              <div className="p-3 rounded-xl bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/30">
-                <Phone className="text-green-400" size={24} />
+
+            {/* Telefone */}
+            <div className="flex items-center space-x-6 p-6 bg-gradient-to-r from-black/30 to-slate-800/30 rounded-2xl border border-orange-500/30 backdrop-blur-sm hover:scale-[1.02] transition-all">
+              <div className="p-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 border border-orange-500">
+                <Phone className="text-white" size={24} />
               </div>
               <div>
                 <p className="font-semibold text-white text-lg">Telefone</p>
                 <p className="text-gray-300">(11) 99999-9999</p>
               </div>
             </div>
-            
-            <div className="flex items-center space-x-6 p-6 bg-gradient-to-r from-slate-800/30 to-black/30 rounded-2xl border border-orange-500/20 backdrop-blur-sm">
-              <div className="p-3 rounded-xl bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-500/30">
-                <MapPin className="text-blue-400" size={24} />
+
+            {/* Localização */}
+            <div className="flex items-center space-x-6 p-6 bg-gradient-to-r from-black/30 to-slate-800/30 rounded-2xl border border-orange-500/30 backdrop-blur-sm hover:scale-[1.02] transition-all">
+              <div className="p-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 border border-orange-500">
+                <MapPin className="text-white" size={24} />
               </div>
               <div>
                 <p className="font-semibold text-white text-lg">Localização</p>
@@ -64,16 +68,16 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-slate-800/30 to-black/30 border border-orange-500/20 rounded-3xl p-8 backdrop-blur-sm">
+          <div className="bg-gradient-to-br from-black/40 to-slate-900/40 border border-orange-500/30 rounded-3xl p-8 backdrop-blur-sm shadow-md hover:shadow-orange-500/10 transition-shadow duration-300">
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div>
                 <Input
                   placeholder="Nome completo"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="bg-black/50 border-gray-600 text-white placeholder-gray-400 rounded-xl h-12"
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="bg-black/70 border border-orange-500/10 text-white placeholder-gray-200 rounded-xl h-12 focus:ring-2 focus:ring-orange-500/40"
                   required
                 />
               </div>
@@ -82,8 +86,8 @@ const ContactSection = () => {
                   type="email"
                   placeholder="E-mail"
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="bg-black/50 border-gray-600 text-white placeholder-gray-400 rounded-xl h-12"
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="bg-black/70 border border-orange-500/10 text-white placeholder-gray-200 rounded-xl h-12 focus:ring-2 focus:ring-orange-500/40"
                   required
                 />
               </div>
@@ -91,14 +95,14 @@ const ContactSection = () => {
                 <Textarea
                   placeholder="Mensagem"
                   value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  className="bg-black/50 border-gray-600 text-white placeholder-gray-400 min-h-32 rounded-xl"
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="bg-black/70 border border-orange-500/10 text-white placeholder-gray-200 min-h-32 rounded-xl focus:ring-2 focus:ring-orange-500/40"
                   required
                 />
               </div>
-              <Button 
+              <Button
                 type="submit"
-                className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-4 px-8 rounded-full w-full shadow-lg"
+                className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-4 px-8 rounded-full w-full shadow-lg transition-all duration-300"
               >
                 <WhatsAppIcon />
                 ENVIAR MENSAGEM
