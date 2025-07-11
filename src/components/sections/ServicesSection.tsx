@@ -13,6 +13,7 @@ const ServicesSection = () => {
       icon: Brain,
       iconColor: "text-blue-400",
       bgGradient: "from-blue-500/20 to-cyan-500/20",
+      hoverColors: "blue-500, cyan-500",
       benefits: ["Análise gratuita", "Recomendação personalizada", "Suporte especializado"]
     },
     {
@@ -21,6 +22,7 @@ const ServicesSection = () => {
       icon: Wrench,
       iconColor: "text-emerald-400",
       bgGradient: "from-emerald-500/20 to-green-500/20",
+      hoverColors: "emerald-500, green-500",
       benefits: ["Montagem certificada", "Testes de qualidade", "Garantia estendida"]
     },
     {
@@ -29,6 +31,7 @@ const ServicesSection = () => {
       icon: Headphones,
       iconColor: "text-purple-400",
       bgGradient: "from-purple-500/20 to-pink-500/20",
+      hoverColors: "purple-500, pink-500",
       benefits: ["Suporte 24/7", "Manutenção preventiva", "Assistência remota"]
     },
     {
@@ -37,6 +40,7 @@ const ServicesSection = () => {
       icon: TrendingUp,
       iconColor: "text-orange-400",
       bgGradient: "from-orange-500/20 to-red-500/20",
+      hoverColors: "orange-500, red-500",
       benefits: ["Upgrade sem perda de dados", "Peças originais", "Instalação profissional"]
     }
   ];
@@ -88,9 +92,8 @@ const ServicesSection = () => {
               }}
             >
               <CardContent className="p-8 relative overflow-hidden">
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-3xl" 
-                     style={{background: `linear-gradient(135deg, ${service.bgGradient.split(' ')[1].replace('/', '')}, ${service.bgGradient.split(' ')[3].replace('/', '')})`}}></div>
+                {/* Hover glow effect - fixed */}
+                <div className={`absolute inset-0 bg-gradient-to-r from-${service.hoverColors.split(', ')[0]}/10 to-${service.hoverColors.split(', ')[1]}/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`}></div>
                 
                 <div className="relative z-10">
                   <div className="flex items-start space-x-6 mb-6">
