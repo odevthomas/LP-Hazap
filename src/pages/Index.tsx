@@ -1,9 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import HeroSection from '@/components/sections/HeroSection';
 import MascotPopupModal from '@/components/modals/MascotPopupModal';
 import CarouselSection from '@/components/sections/CarouselSection';
-import ComputerSection from '@/components/sections/ComputerSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import ComponentsSection from '@/components/sections/ComponentsSection';
 import ContactSection from '@/components/sections/ContactSection';
@@ -58,10 +56,9 @@ const Index = () => {
       <MascotPopupModal 
         visible={showMascotPopup} 
         onClose={() => setShowMascotPopup(false)} 
-        onScrollToComputers={() => scrollToSection('computers')} 
+        onScrollToComputers={() => scrollToSection('components')} 
       />
       <CarouselSection />
-      <ComputerSection />
       <ServicesSection />
       <ComponentsSection />
       <ContactSection />

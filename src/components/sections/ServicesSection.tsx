@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { Brain, Wrench, Headphones, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Brain, Wrench, Headphones, TrendingUp } from 'lucide-react';
 import WhatsAppIcon from '../icons/WhatsAppIcon';
 
 const ServicesSection = () => {
@@ -11,25 +11,29 @@ const ServicesSection = () => {
       title: "Consultoria Técnica",
       description: "Nossos especialistas te ajudam a escolher a configuração ideal para suas necessidades específicas.",
       icon: Brain,
-      bgGradient: "from-blue-600 to-cyan-600"
+      iconColor: "text-blue-400",
+      bgGradient: "from-blue-500/20 to-cyan-500/20"
     },
     {
       title: "Montagem Profissional",
       description: "Montamos seu PC com cuidado e precisão, garantindo máximo desempenho e durabilidade.",
       icon: Wrench,
-      bgGradient: "from-green-600 to-emerald-600"
+      iconColor: "text-emerald-400",
+      bgGradient: "from-emerald-500/20 to-green-500/20"
     },
     {
       title: "Suporte Técnico",
       description: "Oferecemos suporte completo pós-venda com garantia estendida e manutenção preventiva.",
       icon: Headphones,
-      bgGradient: "from-purple-600 to-pink-600"
+      iconColor: "text-purple-400",
+      bgGradient: "from-purple-500/20 to-pink-500/20"
     },
     {
       title: "Upgrade e Melhorias",
       description: "Atualize seu computador com as peças mais recentes do mercado sem perder dados.",
       icon: TrendingUp,
-      bgGradient: "from-orange-600 to-red-600"
+      iconColor: "text-orange-400",
+      bgGradient: "from-orange-500/20 to-red-500/20"
     }
   ];
 
@@ -49,12 +53,12 @@ const ServicesSection = () => {
           {servicesWithIcons.map((service, index) => (
             <Card 
               key={index} 
-              className="bg-gradient-to-br from-slate-800/30 to-slate-900/30 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 transform hover:scale-105 rounded-3xl backdrop-blur-sm"
+              className="bg-gradient-to-br from-slate-800/30 to-black/30 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 transform hover:scale-105 rounded-3xl backdrop-blur-sm"
             >
               <CardContent className="p-8">
                 <div className="flex items-start space-x-6">
-                  <div className={`p-4 rounded-2xl bg-gradient-to-r ${service.bgGradient} flex-shrink-0 shadow-lg`}>
-                    <service.icon className="w-8 h-8 text-white" />
+                  <div className={`p-4 rounded-2xl bg-gradient-to-r ${service.bgGradient} flex-shrink-0 border border-white/10`}>
+                    <service.icon className={`w-8 h-8 ${service.iconColor}`} />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
@@ -68,7 +72,7 @@ const ServicesSection = () => {
                       className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-3 px-6 rounded-full shadow-lg"
                     >
                       <WhatsAppIcon />
-                      Fale com um especialista agora
+                      Fale com um especialista
                     </Button>
                   </div>
                 </div>
