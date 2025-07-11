@@ -43,17 +43,16 @@ const FloatingWhatsApp = () => {
         <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping" />
       </div>
 
-      {/* Card flutuante + mascote atrás */}
+      {/* Card flutuante com mascote */}
       {showNotification && (
         <div className="fixed bottom-36 right-8 z-50 max-w-sm animate-slide-in-right">
-          {/* Container com posição relativa */}
           <div className="relative">
-            {/* Mascote posicionado acima e atrás do card */}
+            {/* Mascote */}
             <div className="absolute bottom-full right-9 transform translate-y-1/2 z-0 pointer-events-none">
               <img
                 src="/vendas/mascote.png"
                 alt="Mascote Hazap"
-                className="w-100  h-83 object-contain animate-bounce-slow"
+                className="w-100 h-83 object-contain animate-bounce-slow"
                 style={{
                   filter: "drop-shadow(0 20px 25px rgba(226, 223, 223, 0.01))",
                 }}
@@ -63,7 +62,6 @@ const FloatingWhatsApp = () => {
 
             {/* Card de notificação */}
             <div className="relative bg-gradient-to-br from-black via-slate-900 to-black border border-orange-500/30 rounded-2xl p-6 shadow-2xl backdrop-blur-md overflow-hidden z-10">
-              {/* Glow por trás */}
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-2xl z-0" />
 
               {/* Botão fechar */}
@@ -84,18 +82,17 @@ const FloatingWhatsApp = () => {
                 </div>
 
                 <h3 className="text-lg font-bold mb-2 text-white">
-                  🔥 Ofertas Especiais Ativas
+                  Conheça nossas máquinas
                 </h3>
                 <p className="text-gray-300 text-sm mb-4">
-                  Computadores gamers com desconto especial hoje!
+                  Explore os computadores disponíveis com desempenho de ponta para games, trabalho e produtividade.
                 </p>
 
                 <button
                   onClick={scrollToMachines}
                   className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-2 px-4 rounded-lg w-full transform hover:scale-105 transition-all duration-300 flex items-center justify-center border border-green-300/20"
                 >
-                  <WhatsAppIcon />
-                  VER OFERTAS
+                  VER MÁQUINAS
                 </button>
               </div>
             </div>

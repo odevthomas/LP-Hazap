@@ -133,16 +133,29 @@ const CarouselSection = () => {
 
                 <div className="px-6 pb-6">
                   <Button
-                    onClick={() => window.open("https://hazap.com.br/redirect/?msg=Olá, gostaria de saber mais sobre os computadores mostrados no vídeo.", "_blank")}
-                    className={`${
-                      item.featured
-                        ? 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-black font-bold py-4 px-6 text-base'
-                        : 'bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-3 px-4 text-sm'
-                    } rounded-full w-full shadow-lg transition-all duration-300`}
-                  >
-                    <WhatsAppIcon />
+                                                onClick={() =>
+                                                  window.open(
+                                                    `https://hazap.com.br/redirect/?msg=${encodeURIComponent(
+                                                      component.whatsappMsg
+                                                    )}`,
+                                                    '_blank'
+                                                  )
+                                                }
+                                                className="relative z-10 bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-3 px-5 rounded-full w-full shadow-lg text-sm transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
+                                              >
+                                                {/* Ícone como imagem */}
+                                                <div className="bg-white rounded-full p-1 sm:p-1.5 flex items-center justify-center">
+                                                  <img
+                                                    src="/vendas/wpp.svg"
+                                                    alt="WhatsApp"
+                                                    className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+                                                  />
+                                                </div>
+                                               
+                                           
                     {item.featured ? 'FALAR COM ESPECIALISTA' : 'SOLICITAR ORÇAMENTO'}
                   </Button>
+                  
                 </div>
               </CardContent>
             </Card>

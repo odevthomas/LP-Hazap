@@ -1,47 +1,39 @@
 'use client'
 
-import React from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel'
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import WhatsAppIcon from '../icons/WhatsAppIcon';
 
 const ComponentsSection = () => {
   const computerComponents = [
     {
-      title: 'Processadores',
-      description:
-        'Escolha o cérebro da sua máquina. Com as melhores opções da Intel e AMD, você garante velocidade e eficiência para qualquer tarefa.',
-      image: '/vendas/computerComponents/processador.png',
-      whatsappMsg: 'Gostaria de solicitar um orçamento de processadores, por favor.',
+      title: "Processadores",
+      description: "Escolha o cérebro da sua máquina. Com as melhores opções da Intel e AMD, você garante velocidade e eficiência para qualquer tarefa.",
+      image: "/vendas/computerComponents/processador.png",
+      whatsappMsg: "Gostaria de solicitar um orçamento de processadores, por favor."
     },
     {
-      title: 'Placas-mãe',
-      description:
-        'Compatibilidade total e upgrade garantido. Nossas placas-mãe oferecem estabilidade, conectividade e suporte para os processadores mais atuais.',
-      image: '/vendas/computerComponents/placamae.png',
-      whatsappMsg: 'Gostaria de solicitar um orçamento de placas-mãe, por favor.',
+      title: "Placas-mãe",
+      description: "Compatibilidade total e upgrade garantido. Nossas placas-mãe oferecem estabilidade, conectividade e suporte para os processadores mais atuais.",
+      image: "/vendas/computerComponents/placamae.png",
+      whatsappMsg: "Gostaria de solicitar um orçamento de placas-mãe, por favor."
     },
     {
-      title: 'Placas de vídeo',
-      description:
-        'Desempenho gráfico de última geração para jogos AAA, renderizações, edição de vídeo e projetos em 3D. RTX e Radeon com garantia e suporte.',
-      image: '/vendas/computerComponents/placadevideo.png',
-      whatsappMsg: 'Gostaria de solicitar um orçamento de placas de vídeo, por favor.',
+      title: "Placas de vídeo",
+      description: "Desempenho gráfico de última geração para jogos AAA, renderizações, edição de vídeo e projetos em 3D. RTX e Radeon com garantia e suporte.",
+      image: "/vendas/computerComponents/placadevideo.png",
+      whatsappMsg: "Gostaria de solicitar um orçamento de placas de vídeo, por favor."
     },
     {
-      title: 'Acessórios Gamer',
-      description:
-        'Teclados mecânicos, mouses com alta precisão, headsets com som imersivo e cadeiras ergonômicas. Tudo para melhorar sua gameplay.',
-      image: '/vendas/computerComponents/acessorios.png',
-      whatsappMsg: 'Gostaria de solicitar um orçamento de acessórios gamer, por favor.',
-    },
-  ]
+      title: "Acessórios Gamer",
+      description: "Teclados mecânicos, mouses com alta precisão, headsets com som imersivo e cadeiras ergonômicas. Tudo para melhorar sua gameplay.",
+      image: "/vendas/computerComponents/acessorios.png",
+      whatsappMsg: "Gostaria de solicitar um orçamento de acessórios gamer, por favor."
+    }
+    
+  ];
 
   return (
     <section id="components" className="py-24 px-6 bg-black from-black to-slate-900">
@@ -71,44 +63,25 @@ const ComponentsSection = () => {
                               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                           </div>
-                          <div className="p-6 space-y-6">
-                            <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                          <div className="p-6">
+                            <h3 className="text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                               {component.title}
                             </h3>
-                            <p className="text-gray-300 text-sm leading-relaxed">
+                            <p className="text-gray-300 mb-6 text-sm leading-relaxed">
                               {component.description}
                             </p>
-
-                            {/* Botão com efeito de vibração */}
-                            <div className="relative w-full flex items-center justify-center">
-                              {/* Anéis vibrantes */}
-                              <div className="absolute inset-0 rounded-full blur-md bg-[#25D366] opacity-75 animate-pulse" />
-                              <div className="absolute inset-0 rounded-full border-2 border-[#25D366] animate-ping opacity-30" />
-                              <div className="absolute inset-0 rounded-full border-2 border-[#25D366] animate-ping opacity-20" style={{ animationDelay: '200ms' }} />
-                              <div className="absolute inset-0 rounded-full border-2 border-[#25D366] animate-ping opacity-10" style={{ animationDelay: '300ms' }} />
-
-                              <Button
-                                onClick={() =>
-                                  window.open(
-                                    `https://hazap.com.br/redirect/?msg=${encodeURIComponent(
-                                      component.whatsappMsg
-                                    )}`,
-                                    '_blank'
-                                  )
-                                }
-                                className="relative z-10 bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-3 px-5 rounded-full w-full shadow-lg text-sm transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
-                              >
-                                {/* Ícone como imagem */}
-                                <div className="bg-white rounded-full p-1 sm:p-1.5 flex items-center justify-center">
-                                  <img
-                                    src="/vendas/wpp.svg"
-                                    alt="WhatsApp"
-                                    className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
-                                  />
-                                </div>
-                                Solicitar Orçamento
-                              </Button>
-                            </div>
+                            <Button 
+                              onClick={() => window.open(`https://hazap.com.br/redirect/?msg=${encodeURIComponent(component.whatsappMsg)}`, "_blank")}
+                              className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-3 px-4 rounded-full w-full shadow-lg text-sm"
+                            >
+ <div className="bg-white rounded-full p-1 sm:p-1.5 flex items-center justify-center">
+                                            <img
+                                              src="/vendas/wpp.svg"
+                                              alt="WhatsApp"
+                                              className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+                                            />
+                                          </div>                              Solicitar Orçamento
+                            </Button>
                           </div>
                         </CardContent>
                       </Card>
@@ -123,7 +96,7 @@ const ComponentsSection = () => {
         </Card>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ComponentsSection
+export default ComponentsSection;

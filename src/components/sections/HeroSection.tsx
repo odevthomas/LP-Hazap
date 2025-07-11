@@ -51,7 +51,13 @@ const HeroSection = ({ onShowMascotPopup }: HeroSectionProps) => (
           onClick={onShowMascotPopup}
           className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-5 px-10 text-lg rounded-full transform hover:scale-105 transition-all duration-300 shadow-xl shadow-green-500/25 backdrop-blur-sm"
         >
-          <WhatsAppIcon />
+           <div className="bg-white rounded-full p-1 sm:p-1.5 flex items-center justify-center">
+                                           <img
+                                             src="/vendas/wpp.svg"
+                                             alt="WhatsApp"
+                                             className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+                                           />
+                                         </div>
           FALE COM ESPECIALISTA
         </Button>
       </div>

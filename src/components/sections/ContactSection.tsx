@@ -24,7 +24,7 @@ const ContactSection = () => {
   return (
     <section className="py-24 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-7xl font-black mb-8 text-twhite  from-white via-red-400 to-white animate-pulse">
+        <h2 className="text-4xl md:text-6xl font-bold text-center mb-20 text-transparent bg-clip-text bg-gradient-to-r from-white to-white">
           Vamos Conversar?
         </h2>
         
@@ -104,7 +104,13 @@ const ContactSection = () => {
                 type="submit"
                 className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-4 px-8 rounded-full w-full shadow-lg transition-all duration-300"
               >
-                <WhatsAppIcon />
+                 <div className="bg-white rounded-full p-1 sm:p-1.5 flex items-center justify-center">
+                                           <img
+                                             src="/vendas/wpp.svg"
+                                             alt="WhatsApp"
+                                             className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+                                           />
+                                         </div>
                 ENVIAR MENSAGEM
               </Button>
             </form>
