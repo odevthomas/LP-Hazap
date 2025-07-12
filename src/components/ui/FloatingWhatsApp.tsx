@@ -14,7 +14,7 @@ const FloatingWhatsApp = () => {
   }, []);
 
   const scrollToMachines = () => {
-    const section = document.getElementById("components");
+    const section = document.getElementById("services");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
@@ -52,7 +52,7 @@ const FloatingWhatsApp = () => {
               <img
                 src="/vendas/mascote.png"
                 alt="Mascote Hazap"
-                className="w-100 h-83 object-contain animate-bounce-slow"
+                className="w-100 h-82 object-contain animate-bounce-slow"
                 style={{
                   filter: "drop-shadow(0 20px 25px rgba(226, 223, 223, 0.01))",
                 }}
