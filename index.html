@@ -1,34 +1,68 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vendas hazap - Melhor Loja de Computadores do Interior de SP</title>
+    <title>Vendas Hazap - Melhor Loja de Computadores do Interior de SP</title>
     <meta name="description" content="HAZAP - A melhor loja de computadores do Interior de São Paulo. PCs Gamer, PCs para Profissões e PCs Personalizados com os melhores componentes." />
     <meta name="author" content="HAZAP" />
     <meta name="keywords" content="computadores, pc gamer, hardware, processadores, placas de vídeo, são paulo, interior" />
 
     <!-- Favicon -->
-    <link rel="icon" href="/images/branding/hazap-logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="/images/branding/hazap-logo.png">
+    <link rel="icon" href="/images/branding/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="/images/branding/logo.png">
 
     <!-- Open Graph -->
     <meta property="og:title" content="HAZAP - Melhor Loja de Computadores do Interior de SP" />
     <meta property="og:description" content="PCs Gamer, PCs para Profissões e PCs Personalizados com os melhores componentes do mercado." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/branding/hazap-logo.png" />
+    <meta property="og:image" content="/images/branding/logo.png" />
     <meta property="og:url" content="https://hazap.com.br" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="HAZAP - Melhor Loja de Computadores do Interior de SP" />
     <meta name="twitter:description" content="PCs Gamer, PCs para Profissões e PCs Personalizados com os melhores componentes do mercado." />
-    <meta name="twitter:image" content="/images/branding/hazap-logo.png" />
+    <meta name="twitter:image" content="/images/branding/logo.png" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T2Q8J3J5');
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2Q8J3J5"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Rastreamento de clique em botões do WhatsApp -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const whatsappButtons = document.querySelectorAll('a[href*="wa.me"], a[href*="hazap.com.br/redirect"]');
+        whatsappButtons.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+              event: "conversion",
+              category: "whatsapp_click",
+              action: "clique_whatsapp",
+              label: this.href
+            });
+          });
+        });
+      });
+    </script>
   </body>
 </html>

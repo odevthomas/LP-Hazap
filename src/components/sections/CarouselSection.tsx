@@ -21,7 +21,14 @@ const CarouselSection = () => {
         "/vendas/seupc/pc-arquitetos.png",
         "/vendas/seupc/pc-designers.png",
         "/vendas/seupc/pc-engenheiros.png",
-        "/vendas/seupc/pc-traders.png",
+        "/vendas/seupc/pc-programador.png",
+        "/vendas/seupc/pc-ia.png",
+        "/vendas/seupc/pc-personalizado-1.png",
+        "/vendas/seupc/pc-personalizado-2.png",
+        "/vendas/seupc/pc-personalizado-3.png",
+        "/vendas/seupc/pc-personalizado-4.png",
+        "/vendas/seupc/pc-personalizado-5.png",
+        "/vendas/seupc/pc-personalizado-6.png",
       ],
       title: "COMPUTADORES PARA PROFISSIONAIS",
       description: "Máquinas desenvolvidas para engenheiros, arquitetos, designers gráficos e outros profissionais que exigem performance, agilidade e confiabilidade no dia a dia.",
@@ -35,6 +42,16 @@ const CarouselSection = () => {
       featured: false
     }
   ];
+
+  const getMessageByTitle = (title: string): string => {
+    if (title.includes('GAMER')) {
+      return "Gostaria de um orçamento para um PC Gamer.";
+    } else if (title.includes('PROFISSIONAIS')) {
+      return "Olá, gostaria de saber mais sobre os computadores voltados para uso profissional.";
+    } else {
+      return "Olá, gostaria de montar uma máquina customizada e totalmente personalizada por mim.";
+    }
+  };
 
   return (
     <section className="py-24 px-6 bg-gradient-to-br from-black via-black to-black">
@@ -119,11 +136,7 @@ const CarouselSection = () => {
 
                 <div className="px-6 pb-6">
                   <a
-                    href={`https://hazap.com.br/redirect/?msg=${encodeURIComponent(
-                      item.featured
-                        ? 'Gostaria de falar com um especialista sobre a máquina em destaque.'
-                        : 'Olá! Gostaria de um orçamento para essa máquina.'
-                    )}`}
+                    href={`https://hazap.com.br/redirect/?msg=${encodeURIComponent(getMessageByTitle(item.title))}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -148,36 +161,33 @@ const CarouselSection = () => {
           </p>
 
           <div className="relative max-w-xs mx-auto">
-                      {/* Efeito vibrante */}
-                      <div className="absolute -inset-3 bg-[#25D366] rounded-full blur opacity-75 animate-pulse" />
-                      <div className="absolute -inset-3 rounded-full border-4 border-[#25D366] animate-ping opacity-30" />
-                      <div className="absolute -inset-6 rounded-full border-4 border-[#25D366] animate-ping opacity-20" style={{ animationDelay: "300ms" }} />
-                      <div className="absolute -inset-9 rounded-full border-4 border-[#25D366] animate-ping opacity-10" style={{ animationDelay: "600ms" }} />
-          
-                      <a
-                        href="https://wa.me/5519993261388?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20HAZAP"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        <Button  className="relative w-full text-xl font-bold bg-gradient-to-r from-[#25D366] to-[#25D366] hover:from-[#25D366] hover:to-[#25D366] px-8 py-8 rounded-full border-2 border-white shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
-                    >
-                          <div className="bg-white rounded-full p-1.5">
-                            <img
-                              src="/vendas/wpp.svg"
-                              alt="WhatsApp"
-                              className="w-4 h-4 object-contain"
-                            />
-                          </div>
-                          <span class="text-black">CONVERSAR AGORA </span>
-                          <span className="absolute -right-2 -top-2 flex h-5 w-5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-[#000] flex items-center justify-center text-xs font-bold">1</span>
-                          </span>
-                        </Button>
-                      </a>
-                    </div>
-          
+            <div className="absolute -inset-3 bg-[#25D366] rounded-full blur opacity-75 animate-pulse" />
+            <div className="absolute -inset-3 rounded-full border-4 border-[#25D366] animate-ping opacity-30" />
+            <div className="absolute -inset-6 rounded-full border-4 border-[#25D366] animate-ping opacity-20" style={{ animationDelay: "300ms" }} />
+            <div className="absolute -inset-9 rounded-full border-4 border-[#25D366] animate-ping opacity-10" style={{ animationDelay: "600ms" }} />
+
+            <a
+              href="https://wa.me/5519993261388?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20HAZAP"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <Button className="relative w-full text-xl font-bold bg-gradient-to-r from-[#25D366] to-[#25D366] hover:from-[#25D366] hover:to-[#25D366] px-8 py-8 rounded-full border-2 border-white shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3">
+                <div className="bg-white rounded-full p-1.5">
+                  <img
+                    src="/vendas/wpp.svg"
+                    alt="WhatsApp"
+                    className="w-4 h-4 object-contain"
+                  />
+                </div>
+                <span className="text-black">CONVERSAR AGORA</span>
+                <span className="absolute -right-2 -top-2 flex h-5 w-5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-[#000] flex items-center justify-center text-xs font-bold">1</span>
+                </span>
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
     </section>

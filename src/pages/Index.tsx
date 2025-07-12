@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import HeroSection from '@/components/sections/HeroSection';
 import MascotPopupModal from '@/components/modals/MascotPopupModal';
@@ -19,7 +21,7 @@ const Index = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Adicionar Google Tag Manager
+  // Google Tag Manager e rastreamento de cliques
   useEffect(() => {
     // GTM Script
     const gtmScript = document.createElement('script');
@@ -32,16 +34,34 @@ const Index = () => {
     `;
     document.head.appendChild(gtmScript);
 
-    // GTM NoScript
+    // GTM noscript (visível sem JS)
     const gtmNoScript = document.createElement('noscript');
     gtmNoScript.innerHTML = `
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2Q8J3J5"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
     `;
     document.body.insertBefore(gtmNoScript, document.body.firstChild);
 
+    // Rastrear cliques em links do WhatsApp
+    const trackWhatsAppClicks = () => {
+      const buttons = document.querySelectorAll('a[href*="wa.me"], a[href*="hazap.com.br/redirect"]');
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'conversion',
+            category: 'whatsapp_click',
+            action: 'clique_whatsapp',
+            label: (btn as HTMLAnchorElement).href
+          });
+        });
+      });
+    };
+
+    // Aguardar render da DOM
+    setTimeout(trackWhatsAppClicks, 1000);
+
     return () => {
-      // Cleanup on unmount
       document.head.removeChild(gtmScript);
       if (document.body.contains(gtmNoScript)) {
         document.body.removeChild(gtmNoScript);
@@ -61,9 +81,7 @@ const Index = () => {
       <ServicesSection />
       <ComponentsSection />
       <FloatingWhatsApp />
-
       <Footer onScrollToTop={scrollToTop} />
-      
     </div>
   );
 };
