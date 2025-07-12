@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
@@ -11,8 +11,8 @@ const CarouselSection = () => {
     {
       type: "video",
       content: "https://iyqujwbqfomznelsvebl.supabase.co/storage/v1/object/public/videos-hazap//pcgamer.mp4",
-      title: "PC Gamer Performance",
-      description: "Máxima performance para jogos AAA com FPS elevado e gráficos incríveis",
+      title: "COMPUTADOR GAMER",
+      description: "Jogue Call of Duty, Valorant, CS, LoL e até GTA 6 com alto desempenho, máxima estabilidade, FPS elevado e visual de respeito.",
       featured: false
     },
     {
@@ -23,15 +23,15 @@ const CarouselSection = () => {
         "/vendas/seupc/pc-engenheiros.png",
         "/vendas/seupc/pc-traders.png",
       ],
-      title: "Componentes Premium",
-      description: "As melhores peças do mercado selecionadas pelos nossos especialistas",
+      title: "COMPUTADORES PARA PROFISSIONAIS",
+      description: "Máquinas desenvolvidas para engenheiros, arquitetos, designers gráficos e outros profissionais que exigem performance, agilidade e confiabilidade no dia a dia.",
       featured: true
     },
     {
       type: "video",
       content: "https://iyqujwbqfomznelsvebl.supabase.co/storage/v1/object/public/videos-hazap//pccustom.mp4",
-      title: "Customização Total",
-      description: "Feito sob medida para suas necessidades específicas e preferências",
+      title: "COMPUTADORES PERSONALIZADOS",
+      description: "Montamos seu PC sob medida, com processadores Ryzen ou Intel e placas de vídeo high-end, escolhidas de acordo com sua necessidade e estilo de uso.",
       featured: false
     }
   ];
@@ -83,40 +83,26 @@ const CarouselSection = () => {
                       </div>
                     ) : (
                       <div className="h-full">
-                        {item.featured ? (
-                          <Carousel className="w-full h-[28rem] md:h-[34rem] xl:h-[38rem]">
-                            <CarouselContent className="h-full">
-                              {(item.content as string[]).map((img, imgIndex) => (
-                                <CarouselItem key={imgIndex} className="h-full">
-                                  <div className="relative h-full group/image">
-                                    <img
-                                      src={img}
-                                      alt={`Component ${imgIndex + 1}`}
-                                      className="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover/image:scale-105"
-                                    />
-                                    <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm text-orange-400 px-3 py-1 rounded-full text-sm font-medium border border-orange-500/30">
-                                      {imgIndex + 1} / {(item.content as string[]).length}
-                                    </div>
+                        <Carousel className="w-full h-full">
+                          <CarouselContent className="h-full">
+                            {(item.content as string[]).map((img, imgIndex) => (
+                              <CarouselItem key={imgIndex} className="h-full">
+                                <div className="relative h-full group/image">
+                                  <img
+                                    src={img}
+                                    alt={`Component ${imgIndex + 1}`}
+                                    className="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover/image:scale-105"
+                                  />
+                                  <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm text-orange-400 px-3 py-1 rounded-full text-sm font-medium border border-orange-500/30">
+                                    {imgIndex + 1} / {(item.content as string[]).length}
                                   </div>
-                                </CarouselItem>
-                              ))}
-                            </CarouselContent>
-                            <CarouselPrevious className="left-2 bg-black/50 border-orange-500/30 text-orange-400 hover:bg-orange-500/20 hover:text-orange-300" />
-                            <CarouselNext className="right-2 bg-black/50 border-orange-500/30 text-orange-400 hover:bg-orange-500/20 hover:text-orange-300" />
-                          </Carousel>
-                        ) : (
-                          <div className="grid grid-cols-2 gap-2 h-[24rem] md:h-[30rem]">
-                            {(item.content as string[]).slice(0, 4).map((img, imgIndex) => (
-                              <div key={imgIndex} className="relative group/image">
-                                <img
-                                  src={img}
-                                  alt={`Component ${imgIndex + 1}`}
-                                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover/image:scale-105"
-                                />
-                              </div>
+                                </div>
+                              </CarouselItem>
                             ))}
-                          </div>
-                        )}
+                          </CarouselContent>
+                          <CarouselPrevious className="left-2 bg-black/50 border-orange-500/30 text-orange-400 hover:bg-orange-500/20 hover:text-orange-300" />
+                          <CarouselNext className="right-2 bg-black/50 border-orange-500/30 text-orange-400 hover:bg-orange-500/20 hover:text-orange-300" />
+                        </Carousel>
                       </div>
                     )}
                   </div>
@@ -132,30 +118,24 @@ const CarouselSection = () => {
                 </div>
 
                 <div className="px-6 pb-6">
-                  <Button
-                                                onClick={() =>
-                                                  window.open(
-                                                    `https://hazap.com.br/redirect/?msg=${encodeURIComponent(
-                                                      component.whatsappMsg
-                                                    )}`,
-                                                    '_blank'
-                                                  )
-                                                }
-                                                className="relative z-10 bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-3 px-5 rounded-full w-full shadow-lg text-sm transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
-                                              >
-                                                {/* Ícone como imagem */}
-                                                <div className="bg-white rounded-full p-1 sm:p-1.5 flex items-center justify-center">
-                                                  <img
-                                                    src="/vendas/wpp.svg"
-                                                    alt="WhatsApp"
-                                                    className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
-                                                  />
-                                                </div>
-                                               
-                                           
-                    {item.featured ? 'FALAR COM ESPECIALISTA' : 'SOLICITAR ORÇAMENTO'}
-                  </Button>
-                  
+                  <a
+                    href={`https://hazap.com.br/redirect/?msg=${encodeURIComponent(
+                      item.featured
+                        ? 'Gostaria de falar com um especialista sobre a máquina em destaque.'
+                        : 'Olá! Gostaria de um orçamento para essa máquina.'
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="w-full bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-semibold text-sm py-3 px-4 rounded-full shadow transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                      <img
+                        src="/vendas/wpp.svg"
+                        alt="WhatsApp"
+                        className="w-4 h-4 object-contain"
+                      />
+                      {item.featured ? 'FALAR COM ESPECIALISTA' : 'SOLICITAR ORÇAMENTO'}
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
@@ -166,13 +146,38 @@ const CarouselSection = () => {
           <p className="text-gray-400 mb-6">
             Quer ver mais detalhes? Fale com nossos especialistas agora mesmo!
           </p>
-          <Button
-            onClick={() => window.open("https://hazap.com.br/redirect/?msg=Olá, gostaria de agendar uma demonstração completa dos produtos Hazap.", "_blank")}
-            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-black font-bold py-4 px-8 rounded-full shadow-lg transition-all duration-300"
-          >
-            <WhatsAppIcon />
-            AGENDAR DEMONSTRAÇÃO
-          </Button>
+
+          <div className="relative max-w-xs mx-auto">
+                      {/* Efeito vibrante */}
+                      <div className="absolute -inset-3 bg-[#25D366] rounded-full blur opacity-75 animate-pulse" />
+                      <div className="absolute -inset-3 rounded-full border-4 border-[#25D366] animate-ping opacity-30" />
+                      <div className="absolute -inset-6 rounded-full border-4 border-[#25D366] animate-ping opacity-20" style={{ animationDelay: "300ms" }} />
+                      <div className="absolute -inset-9 rounded-full border-4 border-[#25D366] animate-ping opacity-10" style={{ animationDelay: "600ms" }} />
+          
+                      <a
+                        href="https://wa.me/5519993261388?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20HAZAP"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <Button  className="relative w-full text-xl font-bold bg-gradient-to-r from-[#25D366] to-[#25D366] hover:from-[#25D366] hover:to-[#25D366] px-8 py-8 rounded-full border-2 border-white shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
+                    >
+                          <div className="bg-white rounded-full p-1.5">
+                            <img
+                              src="/vendas/wpp.svg"
+                              alt="WhatsApp"
+                              className="w-4 h-4 object-contain"
+                            />
+                          </div>
+                          <span class="text-black">CONVERSAR AGORA </span>
+                          <span className="absolute -right-2 -top-2 flex h-5 w-5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-[#000] flex items-center justify-center text-xs font-bold">1</span>
+                          </span>
+                        </Button>
+                      </a>
+                    </div>
+          
         </div>
       </div>
     </section>

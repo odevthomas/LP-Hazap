@@ -74,13 +74,7 @@ const FloatingWhatsApp = () => {
 
               {/* Conteúdo principal */}
               <div className="relative z-10">
-                <div className="flex items-center mb-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse" />
-                  <span className="text-green-400 font-semibold text-sm">
-                    MÁQUINAS DISPONÍVEIS
-                  </span>
-                </div>
-
+               
                 <h3 className="text-lg font-bold mb-2 text-white">
                   Conheça nossas máquinas
                 </h3>

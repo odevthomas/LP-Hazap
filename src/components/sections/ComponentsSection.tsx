@@ -4,7 +4,6 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import WhatsAppIcon from '../icons/WhatsAppIcon';
 
 const ComponentsSection = () => {
   const computerComponents = [
@@ -32,7 +31,6 @@ const ComponentsSection = () => {
       image: "/vendas/computerComponents/acessorios.png",
       whatsappMsg: "Gostaria de solicitar um orçamento de acessórios gamer, por favor."
     }
-    
   ];
 
   return (
@@ -40,10 +38,9 @@ const ComponentsSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold leading-tight mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 animate-fade-in">
-            Componentes Premium
-          </h2>
+Não encontrou o que procura?          </h2>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Montamos o PC dos seus sonhos sob medida com os melhores componentes do mercado. Fale com nossos especialistas e tenha uma máquina pronta para jogos, trabalho ou estudos intensivos.
+         Montamos o PC dos seus sonhos sob medida com os melhores componentes do mercado. Fale com nossos especialistas e tenha uma máquina pronta para jogos, trabalho ou estudos intensivos.
           </p>
         </div>
 
@@ -63,25 +60,32 @@ const ComponentsSection = () => {
                               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                           </div>
-                          <div className="p-6">
-                            <h3 className="text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                              {component.title}
-                            </h3>
-                            <p className="text-gray-300 mb-6 text-sm leading-relaxed">
-                              {component.description}
-                            </p>
-                            <Button 
-                              onClick={() => window.open(`https://hazap.com.br/redirect/?msg=${encodeURIComponent(component.whatsappMsg)}`, "_blank")}
-                              className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-3 px-4 rounded-full w-full shadow-lg text-sm"
+                          <div className="p-6 flex flex-col justify-between h-full">
+                            <div>
+                              <h3 className="text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                                {component.title}
+                              </h3>
+                              <p className="text-gray-300 mb-6 text-sm leading-relaxed">
+                                {component.description}
+                              </p>
+                            </div>
+
+                            <a
+                              href={`https://wa.me/5519993261388?text=${encodeURIComponent(component.whatsappMsg)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
                             >
- <div className="bg-white rounded-full p-1 sm:p-1.5 flex items-center justify-center">
-                                            <img
-                                              src="/vendas/wpp.svg"
-                                              alt="WhatsApp"
-                                              className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
-                                            />
-                                          </div>                              Solicitar Orçamento
-                            </Button>
+                              <Button
+                                className="w-full bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-semibold text-sm py-3 px-4 rounded-full shadow transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                              >
+                                <img
+                                  src="/vendas/wpp.svg"
+                                  alt="WhatsApp"
+                                  className="w-4 h-4 object-contain"
+                                />
+                                Solicitar Orçamento
+                              </Button>
+                            </a>
                           </div>
                         </CardContent>
                       </Card>
