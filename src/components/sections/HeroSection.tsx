@@ -1,7 +1,9 @@
+
 'use client';
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Users } from 'lucide-react';
 
 interface HeroSectionProps {
   onShowMascotPopup: () => void;
@@ -46,6 +48,18 @@ const HeroSection = ({ onShowMascotPopup }: HeroSectionProps) => (
              de São Paulo
           </span>
         </h1>
+      </div>
+
+      {/* Card de especialistas online */}
+      <div className="mb-6 flex justify-center">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
+          <div className="relative">
+            <Users className="w-4 h-4 text-green-400" />
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+          </div>
+          <span className="text-white text-sm font-medium">3 especialistas online</span>
+          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+        </div>
       </div>
 
       {/* Botão principal */}

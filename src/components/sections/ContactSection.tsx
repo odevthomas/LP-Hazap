@@ -1,10 +1,11 @@
+
 'use client'
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Users } from 'lucide-react';
 import WhatsAppIcon from '../icons/WhatsAppIcon';
 
 const ContactSection = () => {
@@ -71,6 +72,18 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="bg-gradient-to-br from-black/40 to-slate-900/40 border border-orange-500/30 rounded-3xl p-8 backdrop-blur-sm shadow-md hover:shadow-orange-500/10 transition-shadow duration-300">
+            {/* Card de especialistas online */}
+            <div className="mb-6 flex justify-center">
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
+                <div className="relative">
+                  <Users className="w-4 h-4 text-green-400" />
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                </div>
+                <span className="text-white text-sm font-medium">3 especialistas online</span>
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              </div>
+            </div>
+
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div>
                 <Input
