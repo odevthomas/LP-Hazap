@@ -52,7 +52,7 @@ const ComponentsSection = () => {
                 {computerComponents.map((component, index) => (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <div className="p-3 sm:p-4 h-full">
-                      <Card className="bg-black border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 rounded-3xl shadow-md h-full group overflow-hidden backdrop-blur-sm flex flex-col">
+                      <Card className="bg-black border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 rounded-3xl shadow-md h-full min-h-[500px] group overflow-hidden backdrop-blur-sm flex flex-col">
                         <CardContent className="p-0 flex flex-col flex-grow">
                           <div className="aspect-[4/3] overflow-hidden rounded-t-3xl">
                             <img

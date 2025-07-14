@@ -148,34 +148,44 @@ const ServicesSection = () => {
             Ainda com dúvidas? Nossa equipe está pronta para te ajudar a escolher a melhor configuração para seu projeto.
           </p>
 
-          <div className="relative max-w-xs mx-auto">
-            <div className="absolute -inset-3 bg-[#25D366] rounded-full blur opacity-75 animate-pulse" />
-            <div className="absolute -inset-3 rounded-full border-4 border-[#25D366] animate-ping opacity-30" />
-            <div className="absolute -inset-6 rounded-full border-4 border-[#25D366] animate-ping opacity-20" style={{ animationDelay: "300ms" }} />
-            <div className="absolute -inset-9 rounded-full border-4 border-[#25D366] animate-ping opacity-10" style={{ animationDelay: "600ms" }} />
+        <div className="relative max-w-max mx-auto">
+  <div className="absolute -inset-3 bg-[#25D366] rounded-full blur opacity-75 animate-pulse" />
+  <div className="absolute -inset-3 rounded-full border-4 border-[#25D366] animate-ping opacity-30" />
+  <div
+    className="absolute -inset-6 rounded-full border-4 border-[#25D366] animate-ping opacity-20"
+    style={{ animationDelay: "300ms" }}
+  />
+  <div
+    className="absolute -inset-9 rounded-full border-4 border-[#25D366] animate-ping opacity-10"
+    style={{ animationDelay: "600ms" }}
+  />
 
-            <a
-              href="https://wa.me/5519993261388?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20HAZAP"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <Button className="relative w-full text-base sm:text-lg font-bold bg-gradient-to-r from-[#25D366] to-[#25D366] hover:from-[#25D366] hover:to-[#25D366] px-6 sm:px-8 py-6 rounded-full border-2 border-white shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 sm:gap-3">
-                <div className="bg-white rounded-full p-1.5">
-                  <img
-                    src="/vendas/wpp.svg"
-                    alt="WhatsApp"
-                    className="w-4 h-4 object-contain"
-                  />
-                </div>
-                <span className="text-black">CONVERSAR AGORA</span>
-                <span className="absolute -right-2 -top-2 flex h-5 w-5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-[#000] flex items-center justify-center text-[10px] font-bold">1</span>
-                </span>
-              </Button>
-            </a>
-          </div>
+  <a
+    href="https://wa.me/5519993261388?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20HAZAP"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block"
+  >
+                 <Button className="relative w-full text-xl font-bold bg-gradient-to-r from-[#25D366] to-[#25D366] hover:from-[#25D366] hover:to-[#25D366] px-8 py-8 rounded-full border-2 border-white shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3">
+   
+      <div className="bg-white rounded-full p-1.5 ">
+        <img
+          src="/vendas/wpp.svg"
+          alt="WhatsApp"
+          className="w-4 h-4 object-contain"
+        />
+      </div>
+      <span className="text-black whitespace-nowrap">Orçamento PC Gamer online - Região Metropolitana Campinas</span>
+      <span className="absolute -right-2 -top-3 flex h-5 w-5">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+        <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-[#000] flex items-center justify-center text-xs font-bold">
+          1
+        </span>
+      </span>
+    </Button>
+  </a>
+</div>
+
         </div>
       </div>
     </section>

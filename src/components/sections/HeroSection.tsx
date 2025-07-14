@@ -113,6 +113,12 @@ const HeroSection = ({ onShowMascotPopup }: HeroSectionProps) => (
               </span>
             </Button>
           </a>
+            <div className="absolute -bottom-9 left-0 right-0 text-center">
+              <div className="inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-medium shadow-md">
+                <span className="text-green-600 font-bold text-lg">✓</span>
+                <span>3 especialistas online agora</span>
+              </div>
+              </div>
         </div>
       </div>
     </div>

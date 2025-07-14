@@ -14,7 +14,7 @@ const FloatingWhatsApp = () => {
   }, []);
 
   const scrollToMachines = () => {
-    const section = document.getElementById("services");
+    const section = document.getElementById("luna");
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
@@ -37,54 +37,96 @@ const FloatingWhatsApp = () => {
       {/* Botão de notificação */}
       <div
         onClick={toggleNotification}
-        className="fixed bottom-24 right-8 z-40 cursor-pointer bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full shadow-lg hover:shadow-orange-500/25 hover:scale-110 transition-all duration-300 animate-pulse"
+        className="fixed bottom-24 right-8 z-40 cursor-pointer bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full shadow-lg hover:shadow-orange-500/25 hover:scale-110 transition-all duration-300 animate-pulse
+
+          sm:bottom-20 sm:right-6
+          xs:bottom-16 xs:right-4
+        "
+        aria-label="Abrir notificação WhatsApp"
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => { if (e.key === 'Enter') toggleNotification(); }}
       >
-        <Bell className="w-5 h-5" />
-        <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping" />
+        <Bell className="w-5 h-5 sm:w-4 sm:h-4 xs:w-3 xs:h-3" />
+        <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping sm:w-2 sm:h-2 xs:w-1.5 xs:h-1.5" />
       </div>
 
       {/* Card flutuante com mascote */}
       {showNotification && (
-        <div className="fixed bottom-36 right-8 z-50 max-w-sm animate-slide-in-right">
+        <div
+          className="fixed bottom-36 right-8 z-50 max-w-sm animate-slide-in-right
+            sm:bottom-28 sm:right-6 sm:max-w-xs
+            xs:bottom-20 xs:right-4 xs:max-w-[280px]
+          "
+          role="region"
+          aria-live="polite"
+          aria-label="Notificação do WhatsApp"
+        >
           <div className="relative">
             {/* Mascote */}
-            <div className="absolute bottom-full right-9 transform translate-y-1/2 z-0 pointer-events-none">
+            <div
+              className="absolute bottom-full right-9 transform translate-y-1/2 z-0 pointer-events-none
+                sm:right-7
+                xs:right-5 xs:w-36 xs:h-44
+              "
+            >
               <img
                 src="/vendas/mascote.png"
                 alt="Mascote Hazap"
-                className="w-100 h-82 object-contain animate-bounce-slow"
+                className="w-50 h-60 object-contain animate-bounce-slow
+                  sm:w-40 sm:h-48
+                  xs:w-36 xs:h-44
+                "
                 style={{
                   filter: "drop-shadow(0 20px 25px rgba(226, 223, 223, 0.01))",
                 }}
               />
-              <div className="absolute inset-0 w-40 h-40 rounded-full bg-orange-500/20 blur-2xl" />
+              <div className="absolute inset-0 w-40 h-40 rounded-full bg-orange-500/20 blur-2xl sm:w-36 sm:h-36 xs:w-32 xs:h-32" />
             </div>
 
             {/* Card de notificação */}
-            <div className="relative bg-gradient-to-br from-black via-slate-900 to-black border border-orange-500/30 rounded-2xl p-6 shadow-2xl backdrop-blur-md overflow-hidden z-10">
+            <div
+              className="relative bg-gradient-to-br from-black via-slate-900 to-black border border-orange-500/30 rounded-2xl p-6 shadow-2xl backdrop-blur-md overflow-hidden z-10
+                sm:p-5
+                xs:p-4
+              "
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-2xl z-0" />
 
               {/* Botão fechar */}
               <button
                 onClick={hideNotification}
-                className="absolute top-3 right-3 text-gray-400 hover:text-white transition-colors z-10"
+                className="absolute top-3 right-3 text-gray-400 hover:text-white transition-colors z-10
+                  sm:top-2 sm:right-2
+                  xs:top-1 xs:right-1
+                "
+                aria-label="Fechar notificação"
               >
-                <X className="w-4 h-4" />
+                <X className="w-4 h-4 sm:w-3 sm:h-3 xs:w-3 xs:h-3" />
               </button>
 
               {/* Conteúdo principal */}
-              <div className="relative z-10">
-               
-                <h3 className="text-lg font-bold mb-2 text-white">
-                  Conheça nossas máquinas
+              <div className="relative z-10 text-center sm:text-left">
+                <h3 className="text-lg font-bold mb-2 text-white
+                  sm:text-base
+                  xs:text-sm
+                ">
+                  O sonho do seu novo PC está aqui
                 </h3>
-                <p className="text-gray-300 text-sm mb-4">
-                  Explore os computadores disponíveis com desempenho de ponta para games, trabalho e produtividade.
+                <p className="text-gray-300 text-sm mb-4
+                  sm:text-xs
+                  xs:text-xs
+                ">
+                  Compre PC Gamer na Região Metropolitana de Campinas! Melhor preço, montagem personalizada. Orçamento online grátis!
                 </p>
 
                 <button
                   onClick={scrollToMachines}
-                  className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-2 px-4 rounded-lg w-full transform hover:scale-105 transition-all duration-300 flex items-center justify-center border border-green-300/20"
+                  className="bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-bold py-2 px-4 rounded-lg w-full transform hover:scale-105 transition-all duration-300 flex items-center justify-center border border-green-300/20
+                    sm:py-1.5 sm:px-3
+                    xs:py-1 xs:px-2
+                  "
+                  aria-label="Ver máquinas disponíveis"
                 >
                   VER MÁQUINAS
                 </button>
