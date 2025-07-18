@@ -1,73 +1,166 @@
-# Welcome to your Lovable project
+# Projeto Vendas Hazap
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/70351bab-448d-4435-be2c-15267106df2d
+## Visão Geral
 
-## How can I edit this code?
+Este projeto é uma plataforma web moderna e responsiva para a **Hazap Computadores**, empresa especializada em venda de computadores personalizados, PCs gamers e estações de trabalho otimizadas para profissionais.
 
-There are several ways of editing your application.
+O objetivo principal é oferecer uma experiência digital focada em:
 
-**Use Lovable**
+- **Alto desempenho e velocidade**, garantindo carregamento rápido mesmo em conexões lentas.
+- **SEO avançado** para posicionar a loja nas primeiras posições de busca, atraindo clientes da região de Campinas e interior de São Paulo.
+- **Conversão otimizada**, com chamadas para ação claras e direcionamento rápido ao atendimento via WhatsApp, canal prioritário da empresa.
+- **Design responsivo e acessível**, para garantir uma navegação fluida e confortável em qualquer dispositivo (desktop, tablet ou smartphone).
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/70351bab-448d-4435-be2c-15267106df2d) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tecnologias Utilizadas
 
-**Use your preferred IDE**
+- React 18 com Next.js (ou React + Vite) para construção da interface.
+- TypeScript para maior robustez e manutenção do código.
+- Tailwind CSS para estilização rápida, responsiva e consistente.
+- React Icons para ícones semânticos e visual atrativo.
+- Supabase para armazenamento de vídeos e imagens.
+- GitHub Actions para automação CI/CD (Deploy contínuo).
+- Vercel / AWS para hospedagem com alta disponibilidade e performance.
+- Google Tag Manager para controle e monitoramento de eventos e conversões.
+- Schema.org (JSON-LD) para otimização SEO estrutural.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Estrutura do Projeto
 
-Follow these steps:
+```bash
+/
+├── public/                   # Imagens, logos, vídeos públicos
+│   ├── vendas/
+│       ├── logo.png
+│       ├── wpp.svg
+│       └── ...
+├── src/
+│   ├── components/           # Componentes React reutilizáveis
+│   │   ├── HeroSection.tsx
+│   │   ├── CarouselSection.tsx
+│   │   └── AtendimentoWhatsapp.tsx
+│   ├── pages/                # Páginas da aplicação
+│   │   ├── index.tsx         # Página principal
+│   │   └── vendas/
+│   │       └── atendimentoWhatsapp.tsx
+│   ├── styles/               # Configurações e arquivos Tailwind
+│   └── main.tsx              # Ponto de entrada da aplicação
+├── .github/workflows/        # Configuração CI/CD GitHub Actions
+├── package.json              # Dependências e scripts
+├── tailwind.config.js        # Configuração do Tailwind CSS
+└── README.md                 # Este arquivo
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Funcionalidades Principais
+1. HeroSection (Seção inicial)
+Vídeo de fundo com overlay em degrade para foco no conteúdo.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Logo e slogan com texto em gradiente para destaque visual.
 
-# Step 3: Install the necessary dependencies.
-npm i
+Botão chamativo para contato via WhatsApp, com efeitos visuais (pulse).
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Contador dinâmico mostrando tempo de resposta estimado dos especialistas.
+
+Mensagem de especialistas online com status em tempo real.
+
+Layout 100% responsivo com ajustes para telas de diferentes tamanhos.
+
+2. CarouselSection (Seção de produtos)
+Apresentação em cards com vídeo ou galeria de imagens.
+
+Destaques dos diferenciais dos PCs em tópicos claros com ícones.
+
+Botões de ação para contato direto via WhatsApp com mensagem personalizada.
+
+Carrossel customizado para navegação intuitiva entre imagens.
+
+Foco na clareza, legibilidade e estética moderna.
+
+3. AtendimentoWhatsapp (Página de redirecionamento)
+Redireciona automaticamente para WhatsApp com mensagem pré-formatada.
+
+Contador regressivo visível para informar o usuário.
+
+Opção manual para abrir o WhatsApp se o redirecionamento automático não ocorrer.
+
+Layout minimalista, acessível e totalmente responsivo.
+
+Informações de segurança e confidencialidade reforçadas no rodapé.
+
+Como Rodar o Projeto Localmente
+Requisitos
+Node.js >= 18
+
+Yarn ou npm
+
+Git
+
+Passos
+Clone o repositório:
+
+bash
+Copiar
+Editar
+git clone https://github.com/seu-usuario/hazap-vendas.git
+cd hazap-vendas
+Instale as dependências:
+
+bash
+Copiar
+Editar
+yarn install
+# ou
+npm install
+Inicie o servidor de desenvolvimento:
+
+bash
+Copiar
+Editar
+yarn dev
+# ou
 npm run dev
-```
+Abra no navegador: http://localhost:3000
 
-**Edit a file directly in GitHub**
+Build e Deploy
+Para gerar a versão de produção (build otimizado):
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+bash
+Copiar
+Editar
+yarn build
+# ou
+npm run build
+O build será gerado na pasta dist (ou .next no Next.js).
 
-**Use GitHub Codespaces**
+Para criar o arquivo zip do build no Ubuntu:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+bash
+Copiar
+Editar
+zip -r hazap-vendas-dist.zip dist/
+Faça deploy na plataforma escolhida (Vercel, AWS, Netlify, etc), configurando seu domínio e certificados SSL.
 
-## What technologies are used for this project?
+SEO e Conversão
+Uso de meta tags otimizadas para título, descrição, palavras-chave e Open Graph.
 
-This project is built with:
+Implementação de Schema.org via JSON-LD para estruturação dos dados e melhor indexação.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Páginas com conteúdo textual relevante e atualizado.
 
-## How can I deploy this project?
+Botões de ação claros e persistentes, com mensagens personalizadas no WhatsApp para agilizar o atendimento.
 
-Simply open [Lovable](https://lovable.dev/projects/70351bab-448d-4435-be2c-15267106df2d) and click on Share -> Publish.
+Monitoramento via Google Tag Manager para rastrear cliques e conversões.
 
-## Can I connect a custom domain to my Lovable project?
+Layout responsivo e acessível para manter usuários engajados e reduzir taxa de rejeição.
 
-Yes, you can!
+Acessibilidade
+Uso de roles e labels ARIA nos elementos importantes.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Contraste alto e cores pensadas para fácil leitura.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Navegação por teclado e foco visível.
+
+Alternativas para imagens (alt text) e carregamento otimizado.

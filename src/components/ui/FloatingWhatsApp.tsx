@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { X, Bell, Wrench, CreditCard, Package, Star } from "lucide-react";
 import WhatsAppIcon from "../icons/WhatsAppIcon";
-import { X, Bell } from "lucide-react";
 
 const FloatingWhatsApp = () => {
   const [showNotification, setShowNotification] = useState(false);
@@ -38,20 +38,21 @@ const FloatingWhatsApp = () => {
       <div
         onClick={toggleNotification}
         className="fixed bottom-24 right-8 z-40 cursor-pointer bg-gradient-to-r from-orange-500 to-red-500 text-white p-3 rounded-full shadow-lg hover:shadow-orange-500/25 hover:scale-110 transition-all duration-300 animate-pulse
-
           sm:bottom-20 sm:right-6
           xs:bottom-16 xs:right-4
         "
         aria-label="Abrir notificação WhatsApp"
         role="button"
         tabIndex={0}
-        onKeyDown={(e) => { if (e.key === 'Enter') toggleNotification(); }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") toggleNotification();
+        }}
       >
         <Bell className="w-5 h-5 sm:w-4 sm:h-4 xs:w-3 xs:h-3" />
         <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping sm:w-2 sm:h-2 xs:w-1.5 xs:h-1.5" />
       </div>
 
-      {/* Card flutuante com mascote */}
+      {/* Card flutuante */}
       {showNotification && (
         <div
           className="fixed bottom-36 right-8 z-50 max-w-sm animate-slide-in-right
@@ -84,7 +85,7 @@ const FloatingWhatsApp = () => {
               <div className="absolute inset-0 w-40 h-40 rounded-full bg-orange-500/20 blur-2xl sm:w-36 sm:h-36 xs:w-32 xs:h-32" />
             </div>
 
-            {/* Card de notificação */}
+            {/* Card principal */}
             <div
               className="relative bg-gradient-to-br from-black via-slate-900 to-black border border-orange-500/30 rounded-2xl p-6 shadow-2xl backdrop-blur-md overflow-hidden z-10
                 sm:p-5
@@ -93,7 +94,7 @@ const FloatingWhatsApp = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-2xl z-0" />
 
-              {/* Botão fechar */}
+              {/* Fechar */}
               <button
                 onClick={hideNotification}
                 className="absolute top-3 right-3 text-gray-400 hover:text-white transition-colors z-10
@@ -105,20 +106,35 @@ const FloatingWhatsApp = () => {
                 <X className="w-4 h-4 sm:w-3 sm:h-3 xs:w-3 xs:h-3" />
               </button>
 
-              {/* Conteúdo principal */}
+              {/* Conteúdo */}
               <div className="relative z-10 text-center sm:text-left">
-                <h3 className="text-lg font-bold mb-2 text-white
-                  sm:text-base
-                  xs:text-sm
-                ">
-                  O sonho do seu novo PC está aqui
+                <h3
+                  className="text-lg font-bold mb-3 text-white
+                    sm:text-base
+                    xs:text-sm
+                  "
+                >
+                  Seu PC Gamer pronto em 24h | Região de Campinas
                 </h3>
-                <p className="text-gray-300 text-sm mb-4
-                  sm:text-xs
-                  xs:text-xs
-                ">
-                  Compre PC Gamer na Região Metropolitana de Campinas! Melhor preço, montagem personalizada. Orçamento online grátis!
-                </p>
+
+                <ul className="text-gray-300 text-sm space-y-3 mb-5 sm:text-xs xs:text-xs">
+                  <li className="flex items-start gap-2">
+                    <Wrench className="w-4 h-4 text-green-400 mt-0.5 sm:w-3 sm:h-3" />
+                    <span>Montagem profissional com 1 ano de garantia</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CreditCard className="w-4 h-4 text-green-400 mt-0.5 sm:w-3 sm:h-3" />
+                    <span>Pagamento facilitado em até 12x</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Package className="w-4 h-4 text-green-400 mt-0.5 sm:w-3 sm:h-3" />
+                    <span>+60.000 PCs entregues com aprovação nacional</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Star className="w-4 h-4 text-green-400 mt-0.5 sm:w-3 sm:h-3" />
+                    <span>Avaliação 4.7 no Google e 11 anos em Campinas</span>
+                  </li>
+                </ul>
 
                 <button
                   onClick={scrollToMachines}
@@ -128,8 +144,17 @@ const FloatingWhatsApp = () => {
                   "
                   aria-label="Ver máquinas disponíveis"
                 >
-                  VER MÁQUINAS
+                  VER CONFIGURAÇÕES DISPONÍVEIS
                 </button>
+
+                <p
+                  className="text-gray-300 text-sm mt-3
+                    sm:text-xs
+                    xs:text-xs
+                  "
+                >
+                  Atendimento em até 2 minutos • Orçamento sem compromisso • Suporte especializado
+                </p>
               </div>
             </div>
           </div>

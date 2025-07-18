@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
@@ -6,34 +6,36 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const ComponentsSection = () => {
-  // Base path da aplicação (subpasta /vendas/)
   const basePath = '/vendas';
 
-  // Componentes com suas mensagens para WhatsApp, sempre começando com "Olá,"
   const computerComponents = [
     {
-      title: "Processadores",
-      description: "Escolha o cérebro da sua máquina. Com as melhores opções da Intel e AMD, você garante velocidade e eficiência para qualquer tarefa.",
+      title: "PROCESSADORES CAMPINAS | MÁXIMA PERFORMANCE",
+      description: "O coração da sua máquina merece o melhor! Intel e AMD de última geração disponíveis em Campinas. Velocidade extrema para gaming, trabalho pesado e multitarefas sem limites.",
       image: "/vendas/computerComponents/processador.png",
-      whatsappMsg: "Olá, gostaria de solicitar um orçamento de processadores, por favor."
+      whatsappMsg: "Olá, gostaria de solicitar um orçamento de processadores, por favor.",
+      buttonLabel: "Ver opções de processador"
     },
     {
-      title: "Placas-mãe",
-      description: "Compatibilidade total e upgrade garantido. Nossas placas-mãe oferecem estabilidade, conectividade e suporte para os processadores mais atuais.",
+      title: "PLACAS-MÃE CAMPINAS | BASE SÓLIDA",
+      description: "A fundação do seu PC dos sonhos! Placas-mãe premium em Campinas com compatibilidade total, conectividade futura e estabilidade absoluta. Pronto para qualquer upgrade.",
       image: "/vendas/computerComponents/placamae.png",
-      whatsappMsg: "Olá, gostaria de solicitar um orçamento de placas-mãe, por favor."
+      whatsappMsg: "Olá, gostaria de solicitar um orçamento de placas-mãe, por favor.",
+      buttonLabel: "Escolher placa-mãe"
     },
     {
-      title: "Placas de vídeo",
-      description: "Desempenho gráfico de última geração para jogos AAA, renderizações, edição de vídeo e projetos em 3D. RTX e Radeon com garantia e suporte.",
+      title: "PLACAS DE VÍDEO CAMPINAS | GRÁFICOS EXTREMOS",
+      description: "Gráficos que impressionam! RTX e Radeon de última geração em Campinas. Gaming 4K, renderização profissional e criação de conteúdo sem limites. Performance que supera expectativas.",
       image: "/vendas/computerComponents/placadevideo.png",
-      whatsappMsg: "Olá, gostaria de solicitar um orçamento de placas de vídeo, por favor."
+      whatsappMsg: "Olá, gostaria de solicitar um orçamento de placas de vídeo, por favor.",
+      buttonLabel: "Explorar placas de vídeo"
     },
     {
-      title: "Acessórios Gamer",
+      title: "ACESSÓRIOS GAMER CAMPINAS | EXPERIÊNCIA COMPLETA",
       description: "Teclados mecânicos, mouses com alta precisão, headsets com som imersivo e cadeiras ergonômicas. Tudo para melhorar sua gameplay.",
       image: "/vendas/computerComponents/acessorios.png",
-      whatsappMsg: "Olá, gostaria de solicitar um orçamento de acessórios gamer, por favor."
+      whatsappMsg: "Olá, gostaria de solicitar um orçamento de acessórios gamer, por favor.",
+      buttonLabel: "Ver acessórios gamer"
     }
   ];
 
@@ -42,10 +44,10 @@ const ComponentsSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20 px-2 sm:px-6">
           <h2 className="text-2xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight mb-6 sm:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 animate-fade-in">
-            Não encontrou o que procura?
+            Vamos criar algo único para você!
           </h2>
           <p className="text-base sm:text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed px-2 sm:px-0">
-            Montamos o PC dos seus sonhos sob medida com os melhores componentes do mercado. Fale com nossos especialistas e tenha uma máquina pronta para jogos, trabalho ou estudos intensivos.
+            Criamos PCs únicos e exclusivos em Campinas há 11 anos. Seja qual for seu projeto especial - gaming extremo, workstation profissional ou setup personalizado - temos a expertise para tornar sua visão realidade.
           </p>
         </div>
 
@@ -67,15 +69,13 @@ const ComponentsSection = () => {
                           </div>
                           <div className="p-5 flex flex-col justify-between flex-grow">
                             <div>
-                              <h3 className="text-lg sm:text-xl font-bold mb-8 sm:mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                              <h3 className="text-lg sm:text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                                 {component.title}
                               </h3>
-                              <p className="text-gray-300 mb-4 sm:mb-6 text-xs sm:text-sm leading-relaxed">
+                              <p className="text-gray-300 mb-6 text-xs sm:text-sm leading-relaxed">
                                 {component.description}
                               </p>
                             </div>
-
-                            {/* Link redireciona para a página interna que faz o redirecionamento para WhatsApp */}
                             <a
                               href={`${basePath}/atendimentoWhatsapp?msg=${encodeURIComponent(component.whatsappMsg)}`}
                               target="_blank"
@@ -90,7 +90,7 @@ const ComponentsSection = () => {
                                   alt="WhatsApp"
                                   className="w-3.5 h-3.5 sm:w-4 sm:h-4 object-contain"
                                 />
-                                Solicitar Orçamento
+                                {component.buttonLabel}
                               </Button>
                             </a>
                           </div>

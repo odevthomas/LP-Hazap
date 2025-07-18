@@ -10,58 +10,84 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import {
+  FiAward,
+  FiTarget,
+  FiCpu,
+  FiZap,
+  FiUsers,
+  FiCheckCircle,
+} from 'react-icons/fi';
+
+const carouselItems = [
+  {
+    type: 'video',
+    content:
+      'https://iyqujwbqfomznelsvebl.supabase.co/storage/v1/object/public/videos-hazap//pcgamer.mp4',
+    title: 'PC GAMER | DOMINE QUALQUER JOGO',
+    descriptionItems: [
+      { icon: <FiAward className="mr-2 text-orange-500" />, text: 'Máxima performance em todos os jogos' },
+      { icon: <FiTarget className="mr-2 text-orange-500" />, text: 'FPS estável garantido' },
+      { icon: <FiCpu className="mr-2 text-orange-500" />, text: 'RGB personalizado' },
+      { icon: <FiZap className="mr-2 text-orange-500" />, text: 'Pronto para GTA 6 e títulos AAA' },
+      { icon: <FiCheckCircle className="mr-2 text-green-600" />, text: '+60 mil gamers satisfeitos' },
+    ],
+    whatsappMsg: 'Olá, gostaria de um orçamento para um PC Gamer.',
+  },
+  {
+    type: 'images',
+    content: [
+      '/vendas/seupc/pc-arquitetos.png',
+      '/vendas/seupc/pc-designers.png',
+      '/vendas/seupc/pc-engenheiros.png',
+      '/vendas/seupc/pc-programador.png',
+      '/vendas/seupc/pc-ia.png',
+      '/vendas/seupc/pc-personalizado-1.png',
+      '/vendas/seupc/pc-personalizado-2.png',
+      '/vendas/seupc/pc-personalizado-3.png',
+      '/vendas/seupc/pc-personalizado-4.png',
+      '/vendas/seupc/pc-personalizado-5.png',
+      '/vendas/seupc/pc-personalizado-6.png',
+    ],
+    title: 'PROFISSIONAL OTIMIZADO WORKSTATION | MÁXIMA PRODUTIVIDADE',
+    descriptionItems: [
+      { icon: <FiZap className="mr-2 text-orange-500" />, text: 'Renderização 3x mais rápida' },
+      { icon: <FiCpu className="mr-2 text-orange-500" />, text: 'Fluxo de trabalho otimizado' },
+      { icon: <FiUsers className="mr-2 text-orange-500" />, text: 'Estabilidade profissional' },
+      { icon: <FiTarget className="mr-2 text-orange-500" />, text: 'ROI garantido no seu negócio' },
+      { icon: <FiCheckCircle className="mr-2 text-green-600" />, text: '+38mil escritórios atendidos na região' },
+    ],
+    whatsappMsg: 'Olá, gostaria de saber mais sobre os computadores voltados para uso profissional.',
+  },
+  {
+    type: 'video',
+    content:
+      'https://iyqujwbqfomznelsvebl.supabase.co/storage/v1/object/public/videos-hazap//pccustom.mp4',
+    title:
+      'PERSONALIZADO OTIMIZADO | PC SOB MEDIDA CAMPINAS | SUA VISÃO, NOSSA EXPERTISE',
+    descriptionItems: [
+      { icon: <FiCheckCircle className="mr-2 text-orange-600" />, text: '100% personalizado para você' },
+      { icon: <FiCpu className="mr-2 text-orange-600" />, text: 'Design único' },
+      { icon: <FiZap className="mr-2 text-orange-600" />, text: 'Performance sob medida' },
+      { icon: <FiUsers className="mr-2 text-orange-600" />, text: 'Consultoria especializada incluída' },
+      { icon: <FiCheckCircle className="mr-2 text-green-600" />, text: 'Cada PC é um projeto único.' },
+    ],
+    whatsappMsg: 'Olá, gostaria de montar uma máquina customizada e totalmente personalizada por mim.',
+  },
+];
 
 const CarouselSection = () => {
   const basePath = '/vendas';
-
-  const carouselItems = [
-    {
-      type: 'video',
-      content: 'https://iyqujwbqfomznelsvebl.supabase.co/storage/v1/object/public/videos-hazap//pcgamer.mp4',
-      title: 'COMPUTADOR GAMER',
-      description:
-        'Jogue Call of Duty, Valorant, CS, LoL e até GTA 6 com alto desempenho, máxima estabilidade, FPS elevado e visual de respeito.',
-      whatsappMsg: 'Olá, gostaria de um orçamento para um PC Gamer.',
-    },
-    {
-      type: 'images',
-      content: [
-        '/vendas/seupc/pc-arquitetos.png',
-        '/vendas/seupc/pc-designers.png',
-        '/vendas/seupc/pc-engenheiros.png',
-        '/vendas/seupc/pc-programador.png',
-        '/vendas/seupc/pc-ia.png',
-        '/vendas/seupc/pc-personalizado-1.png',
-        '/vendas/seupc/pc-personalizado-2.png',
-        '/vendas/seupc/pc-personalizado-3.png',
-        '/vendas/seupc/pc-personalizado-4.png',
-        '/vendas/seupc/pc-personalizado-5.png',
-        '/vendas/seupc/pc-personalizado-6.png',
-      ],
-      title: 'COMPUTADORES PARA PROFISSIONAIS',
-      description:
-        'Máquinas desenvolvidas para engenheiros, arquitetos, designers gráficos e outros profissionais que exigem performance, agilidade e confiabilidade no dia a dia.',
-      whatsappMsg: 'Olá, gostaria de saber mais sobre os computadores voltados para uso profissional.',
-    },
-    {
-      type: 'video',
-      content: 'https://iyqujwbqfomznelsvebl.supabase.co/storage/v1/object/public/videos-hazap//pccustom.mp4',
-      title: 'COMPUTADORES PERSONALIZADOS',
-      description:
-        'Montamos seu PC sob medida, com processadores Ryzen ou Intel e placas de vídeo high-end, escolhidas de acordo com sua necessidade e estilo de uso.',
-      whatsappMsg: 'Olá, gostaria de montar uma máquina customizada e totalmente personalizada por mim.',
-    },
-  ];
 
   return (
     <section id="luna" className="py-24 px-4 bg-gradient-to-br from-black via-black to-black">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-            Veja nossa tecnologia em ação
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+            PCs Sob Medida para Campinas e Região
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Explore nossa linha completa de soluções tecnológicas através de demonstrações reais
+          <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto">
+            Tecnologia de Ponta em Campinas | PCs que Superam Expectativas
           </p>
         </div>
 
@@ -69,84 +95,73 @@ const CarouselSection = () => {
           {carouselItems.map((item, index) => (
             <Card
               key={index}
-              className={`flex flex-col justify-between overflow-hidden rounded-3xl backdrop-blur-sm transition-all duration-500 transform hover:scale-105 h-full ${
-                item.title.includes('PROFISSIONAIS')
-                  ? 'bg-black border border-orange-500/50 shadow-2xl shadow-orange-500/25'
-                  : 'bg-black border border-orange-500/20 hover:border-orange-500/40'
-              }`}
+              className="flex flex-col overflow-hidden rounded-3xl bg-black border border-orange-500/30 hover:border-orange-500/60 shadow-xl transition-transform duration-300 hover:scale-105"
             >
               <CardContent className="flex flex-col flex-grow p-6">
-                {item.title.includes('PROFISSIONAIS') && (
-                  <div className="mb-4">
-                    <span className="px-3 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-black text-xs font-bold rounded-full">
-                      DESTAQUE
-                    </span>
-                  </div>
-                )}
-
-                {/* Mídia */}
-                <div className="mb-6 h-[240px] sm:h-[320px] md:h-[380px] lg:h-[440px] rounded-2xl overflow-hidden">
+                <div className="mb-6 h-[540px] sm:h-[320px] md:h-[360px] lg:h-[400px] rounded-2xl overflow-hidden">
                   {item.type === 'video' ? (
                     <video
                       autoPlay
                       muted
                       loop
                       playsInline
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      className="w-full h-full object-cover"
                     >
-                      <source src={item.content as string} type="video/mp4" />
+                      <source src={item.content} type="video/mp4" />
                     </video>
                   ) : (
                     <Carousel className="w-full h-full">
                       <CarouselContent className="h-full">
-                        {(item.content as string[]).map((img, imgIndex) => (
+                        {item.content.map((img, imgIndex) => (
                           <CarouselItem key={imgIndex} className="h-full">
-                            <div className="relative h-full group">
+                            <div className="relative h-full">
                               <img
                                 src={img}
                                 alt={`Imagem ${imgIndex + 1}`}
-                                className="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
+                                className="w-full h-full object-cover rounded-xl"
                               />
-                              <div className="absolute top-4 right-4 bg-black/50 text-orange-400 px-3 py-1 rounded-full text-sm font-medium border border-orange-500/30">
-                                {imgIndex + 1} / {(item.content as string[]).length}
+                              <div className="absolute top-4 right-4 bg-black/60 text-orange-400 px-3 py-1 rounded-full text-sm">
+                                {imgIndex + 1} / {item.content.length}
                               </div>
                             </div>
                           </CarouselItem>
                         ))}
                       </CarouselContent>
-                      <CarouselPrevious className="left-2 bg-black/50 border-orange-500/30 text-orange-400" />
-                      <CarouselNext className="right-2 bg-black/50 border-orange-500/30 text-orange-400" />
+                      <CarouselPrevious />
+                      <CarouselNext />
                     </Carousel>
                   )}
                 </div>
 
-                {/* Conteúdo */}
-                <div className="text-center flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 min-h-[48px] flex items-center justify-center">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-300 leading-relaxed flex-1 mb-6">
-                    {item.description}
-                  </p>
+                <h3 className="text-lg font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 mb-4">
+                  {item.title}
+                </h3>
 
-                  {/* Botão */}
-                  <div className="mt-auto">
-                    <a
-                      href={`${basePath}/atendimentoWhatsapp?msg=${encodeURIComponent(item.whatsappMsg)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button className="w-full bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-semibold text-sm py-3 px-4 rounded-full shadow transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
-                        <img
-                          src="/vendas/wpp.svg"
-                          alt="WhatsApp"
-                          className="w-4 h-4 object-contain"
-                        />
-                        {item.title.includes('PROFISSIONAIS') ? 'FALAR COM ESPECIALISTA' : 'SOLICITAR ORÇAMENTO'}
-                      </Button>
-                    </a>
-                  </div>
-                </div>
+                <ul className="text-gray-300 space-y-2 mb-6">
+                  {item.descriptionItems.map((desc, i) => (
+                    <li key={i} className="flex items-start">
+                      {desc.icon}
+                      <span>{desc.text}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={`${basePath}/atendimentoWhatsapp?msg=${encodeURIComponent(item.whatsappMsg)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="w-full bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-300 text-black font-semibold text-sm py-3 px-4 rounded-full shadow-lg flex items-center justify-center gap-2">
+                    <img
+                      src="/vendas/wpp.svg"
+                      alt="WhatsApp"
+                      className="w-4 h-4 object-contain"
+                    />
+                    {item.title.includes('PROFISSIONAL')
+                      ? 'FALAR COM ESPECIALISTA'
+                      : 'SOLICITAR ORÇAMENTO'}
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           ))}

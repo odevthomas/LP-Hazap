@@ -21,26 +21,8 @@ const Footer = ({ onScrollToTop }: FooterProps) => (
             <span>Voltar ao topo</span>
           </button>
 
-          <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors px-6 py-3 rounded-full hover:bg-orange-500/10 border border-orange-500/10 backdrop-blur-sm">
-            Política de Privacidade
-          </a>
-          
-          <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors px-6 py-3 rounded-full hover:bg-orange-500/10 border border-orange-500/10 backdrop-blur-sm">
-            Termos de uso
-          </a>
         </div>
-
-        {/* Ícones de contato */}
-        <div className="flex space-x-4">
-          {[Building, Mail, Phone].map((Icon, index) => (
-            <div
-              key={index}
-              className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-lg"
-            >
-              <Icon className="w-5 h-5 text-white" />
-            </div>
-          ))}
-        </div>
+        
       </div>
 
       {/* Copyright */}
