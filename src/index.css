@@ -5,6 +5,11 @@
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 @layer base {
   :root {

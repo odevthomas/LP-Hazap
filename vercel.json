@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    {
+      "source": "/vendas/:path*",
+      "destination": "/vendas/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/vendas",
+      "permanent": true
+    }
+  ]
+}

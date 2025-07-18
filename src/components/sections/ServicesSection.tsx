@@ -21,9 +21,10 @@ const ServicesSection = () => {
         "Equipamentos potentes e otimizados para jogos de última geração, com foco em performance, FPS e refrigeração de alto nível.",
       icon: Gamepad2,
       iconColor: "text-white",
-      bgGradient: "from-red-500 to-red-600",
+      bgGradient: "from-orange-500 to-orange-600",
       glowColor: "shadow-green-500/25",
       benefits: ["Placas de vídeo dedicadas", "Máximo desempenho", "Fale com Especialista"],
+      whatsappMsg: "Gostaria de solicitar um orçamento de placas de vídeo, por favor."
     },
     {
       title: "Computadores Profissionais",
@@ -31,9 +32,10 @@ const ServicesSection = () => {
         "Desempenho e estabilidade para tarefas como design gráfico, programação, arquitetura e mais.",
       icon: Briefcase,
       iconColor: "text-white",
-      bgGradient: "from-red-500 to-red-600",
+      bgGradient: "from-orange-500 to-orange-600",
       glowColor: "shadow-blue-500/25",
       benefits: ["Alta produtividade", "Hardware confiável", "Fale com Especialista"],
+      whatsappMsg: "Gostaria de solicitar um orçamento de placas-mãe, por favor."
     },
     {
       title: "Montagens Personalizadas",
@@ -41,9 +43,10 @@ const ServicesSection = () => {
         "Escolha cada detalhe do seu setup ideal com orientação profissional. Máxima personalização e eficiência.",
       icon: Settings,
       iconColor: "text-white",
-      bgGradient: "from-red-500 to-red-600",
+      bgGradient: "from-orange-500 to-orange-600",
       glowColor: "shadow-purple-500/25",
       benefits: ["Montagem sob medida", "Consultoria técnica", "Fale com Especialista"],
+      whatsappMsg: "Olá, gostaria de montar uma máquina customizada e totalmente personalizada por mim."
     },
     {
       title: "Computadores High-End",
@@ -51,9 +54,10 @@ const ServicesSection = () => {
         "Configurações de ponta para quem busca o que há de mais moderno, veloz e avançado em tecnologia.",
       icon: Rocket,
       iconColor: "text-white",
-      bgGradient: "from-red-500 to-red-600",
-      glowColor: "shadow-red-500/25",
+      bgGradient: "from-orange-500 to-orange-600",
+      glowColor: "shadow-orange-500/25",
       benefits: ["Máxima performance", "Componentes premium", "Fale com Especialista"],
+      whatsappMsg: "Gostaria de solicitar um orçamento de processadores, por favor."
     },
     {
       title: "Melhor Custo-benefício",
@@ -61,9 +65,10 @@ const ServicesSection = () => {
         "Máximo aproveitamento do seu investimento. Configurações equilibradas entre qualidade e preço justo.",
       icon: BadgeDollarSign,
       iconColor: "text-white",
-      bgGradient: "from-red-500 to-red-600",
+      bgGradient: "from-orange-500 to-orange-600",
       glowColor: "shadow-yellow-500/25",
       benefits: ["Ótimo preço", "Desempenho garantido", "Fale com Especialista"],
+      whatsappMsg: "Gostaria de solicitar um orçamento de acessórios gamer, por favor."
     },
     {
       title: "Workstations Profissionais",
@@ -71,14 +76,15 @@ const ServicesSection = () => {
         "Soluções para áreas como engenharia, produção audiovisual, análise de dados e outras demandas pesadas.",
       icon: MonitorSmartphone,
       iconColor: "text-white",
-      bgGradient: "from-red-500 to-red-600",
+      bgGradient: "from-orange-500 to-orange-600",
       glowColor: "shadow-indigo-500/25",
       benefits: ["Alta capacidade", "Performance escalável", "Fale com Especialista"],
-    },
+      whatsappMsg: "Olá, gostaria de saber mais sobre os computadores voltados para uso profissional."
+    }
   ];
 
   return (
-<section id="services" className="py-24 px-6 bg-black">
+    <section id="services" className="py-24 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20 px-2">
           <h2 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
@@ -125,7 +131,7 @@ const ServicesSection = () => {
                 </div>
 
                 <a
-                  href="https://hazap.com.br/redirect/?msg=Olá, gostaria de saber mais sobre os computadores Hazap."
+                  href={`/vendas/atendimentoWhatsapp?msg=${encodeURIComponent(service.whatsappMsg)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -148,44 +154,45 @@ const ServicesSection = () => {
             Ainda com dúvidas? Nossa equipe está pronta para te ajudar a escolher a melhor configuração para seu projeto.
           </p>
 
-        <div className="relative max-w-max mx-auto">
-  <div className="absolute -inset-3 bg-[#25D366] rounded-full blur opacity-75 animate-pulse" />
-  <div className="absolute -inset-3 rounded-full border-4 border-[#25D366] animate-ping opacity-30" />
-  <div
-    className="absolute -inset-6 rounded-full border-4 border-[#25D366] animate-ping opacity-20"
-    style={{ animationDelay: "300ms" }}
-  />
-  <div
-    className="absolute -inset-9 rounded-full border-4 border-[#25D366] animate-ping opacity-10"
-    style={{ animationDelay: "600ms" }}
-  />
+          <div className="relative max-w-max mx-auto">
+            <div className="absolute -inset-3 bg-[#25D366] rounded-full blur opacity-75 animate-pulse" />
+            <div className="absolute -inset-3 rounded-full border-4 border-[#25D366] animate-ping opacity-30" />
+            <div
+              className="absolute -inset-6 rounded-full border-4 border-[#25D366] animate-ping opacity-20"
+              style={{ animationDelay: "300ms" }}
+            />
+            <div
+              className="absolute -inset-9 rounded-full border-4 border-[#25D366] animate-ping opacity-10"
+              style={{ animationDelay: "600ms" }}
+            />
 
-  <a
-    href="https://wa.me/5519993261388?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20HAZAP"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="block"
-  >
-                 <Button className="relative w-full text-xl font-bold bg-gradient-to-r from-[#25D366] to-[#25D366] hover:from-[#25D366] hover:to-[#25D366] px-8 py-8 rounded-full border-2 border-white shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3">
-   
-      <div className="bg-white rounded-full p-1.5 ">
-        <img
-          src="/vendas/wpp.svg"
-          alt="WhatsApp"
-          className="w-4 h-4 object-contain"
-        />
-      </div>
-      <span className="text-black whitespace-nowrap">Orçamento PC Gamer online - Região Metropolitana Campinas</span>
-      <span className="absolute -right-2 -top-3 flex h-5 w-5">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-[#000] flex items-center justify-center text-xs font-bold">
-          1
-        </span>
-      </span>
-    </Button>
-  </a>
-</div>
-
+            <a
+              href="/vendas/atendimentoWhatsapp?msg=Olá,%20tudo%20bem?%20Vim%20através%20do%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento%20personalizado"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <Button
+                size="lg"
+                className="relative w-full text-lg sm:text-xl font-bold bg-gradient-to-r from-[#25D366] to-[#25D366] hover:from-[#25D366] hover:to-[#25D366] px-6 py-6 sm:px-8 sm:py-8 rounded-full border-1 border-[#25D366] shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
+              >
+                <div className="bg-white rounded-full p-1.5 ">
+                  <img
+                    src="/vendas/wpp.svg"
+                    alt="WhatsApp"
+                    className="w-4 h-4 object-contain"
+                  />
+                </div>
+                <span className="text-black whitespace-nowrap">Orçamento PC Gamer online </span>
+                <span className="absolute -right-2 -top-3 flex h-5 w-5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-[#000] flex items-center justify-center text-xs font-bold">
+                    1
+                  </span>
+                </span>
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
     </section>

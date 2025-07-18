@@ -5,25 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vendas Hazap - Melhor Loja de Computadores do Interior de SP</title>
     <meta name="description" content="HAZAP - A melhor loja de computadores do Interior de São Paulo. PCs Gamer, PCs para Profissões e PCs Personalizados com os melhores componentes." />
-    <meta name="author" content="HAZAP" />
-    <meta name="keywords" content="computadores, pc gamer, hardware, processadores, placas de vídeo, são paulo, interior" />
+    <meta name="keywords" content="computadores, pc gamer, hardware, processadores, placas de vídeo, são paulo, interior, hazap, loja de informática" />
+    <meta name="author" content="Hazap Computadores" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Favicon -->
-    <link rel="icon" href="/images/branding/logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="/images/branding/logo.png">
+    <link rel="icon" href="/images/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/images/logo.png" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="HAZAP - Melhor Loja de Computadores do Interior de SP" />
     <meta property="og:description" content="PCs Gamer, PCs para Profissões e PCs Personalizados com os melhores componentes do mercado." />
+    <meta property="og:image" content="https://hazap.com.br/images/logo.png" />
+    <meta property="og:url" content="https://hazap.com.br/vendas/" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/branding/logo.png" />
-    <meta property="og:url" content="https://hazap.com.br" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HAZAP - Melhor Loja de Computadores do Interior de SP" />
-    <meta name="twitter:description" content="PCs Gamer, PCs para Profissões e PCs Personalizados com os melhores componentes do mercado." />
-    <meta name="twitter:image" content="/images/branding/logo.png" />
+    <meta name="twitter:title" content="HAZAP - Loja de Computadores Gamer e Profissionais" />
+    <meta name="twitter:description" content="Monte seu PC com componentes de qualidade, atendimento especializado e entrega para todo o Brasil." />
+    <meta name="twitter:image" content="https://hazap.com.br/images/logo.png" />
+
+    <!-- Schema.org: Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Hazap Computadores",
+        "url": "https://hazap.com.br",
+        "logo": "https://hazap.com.br/images/logo.png",
+        "sameAs": [
+          "https://www.instagram.com/hazaptech",
+          "https://www.facebook.com/hazaptech"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+55-19-99326-1388",
+          "contactType": "customer support",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese", "English"]
+        }
+      }
+    </script>
+
+    <!-- Schema.org: WebPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Vendas Hazap",
+        "url": "https://hazap.com.br/vendas/",
+        "description": "Página de vendas da Hazap: computadores gamer, estações profissionais e PCs personalizados.",
+        "inLanguage": "pt-BR",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Hazap Computadores"
+        }
+      }
+    </script>
+
+    <!-- Schema.org: Product (exemplo de um produto) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "PC Gamer Hazap Ryzen 7 + RTX 4060",
+        "image": "https://hazap.com.br/vendas/seupc/pcgamer.jpg",
+        "description": "Computador Gamer completo com Ryzen 7, 16GB RAM, SSD 1TB e RTX 4060. Ideal para jogar GTA 6, Valorant, LoL e muito mais.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Hazap"
+        },
+        "sku": "HZP-R7-RTX4060",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://hazap.com.br/vendas/",
+          "priceCurrency": "BRL",
+          "price": "6299.00",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Hazap Computadores"
+          }
+        }
+      }
+    </script>
 
     <!-- Google Tag Manager -->
     <script>
@@ -34,23 +101,23 @@
       })(window,document,'script','dataLayer','GTM-T2Q8J3J5');
     </script>
     <!-- End Google Tag Manager -->
-  </head>
 
+  </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2Q8J3J5"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+              height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- Rastreamento de clique em botões do WhatsApp -->
+    <!-- Clique no WhatsApp (evento de conversão) -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const whatsappButtons = document.querySelectorAll('a[href*="wa.me"], a[href*="hazap.com.br/redirect"]');
+        const whatsappButtons = document.querySelectorAll('a[href*="wa.me"], a[href*="hazap.com.br/redirect"], a[href*="/atendimentoWhatsapp"]');
         whatsappButtons.forEach((btn) => {
           btn.addEventListener("click", function () {
             window.dataLayer = window.dataLayer || [];

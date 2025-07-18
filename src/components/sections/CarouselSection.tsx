@@ -12,6 +12,8 @@ import {
 } from '@/components/ui/carousel';
 
 const CarouselSection = () => {
+  const basePath = '/vendas';
+
   const carouselItems = [
     {
       type: 'video',
@@ -19,7 +21,7 @@ const CarouselSection = () => {
       title: 'COMPUTADOR GAMER',
       description:
         'Jogue Call of Duty, Valorant, CS, LoL e até GTA 6 com alto desempenho, máxima estabilidade, FPS elevado e visual de respeito.',
-      featured: false,
+      whatsappMsg: 'Olá, gostaria de um orçamento para um PC Gamer.',
     },
     {
       type: 'images',
@@ -39,7 +41,7 @@ const CarouselSection = () => {
       title: 'COMPUTADORES PARA PROFISSIONAIS',
       description:
         'Máquinas desenvolvidas para engenheiros, arquitetos, designers gráficos e outros profissionais que exigem performance, agilidade e confiabilidade no dia a dia.',
-      featured: true,
+      whatsappMsg: 'Olá, gostaria de saber mais sobre os computadores voltados para uso profissional.',
     },
     {
       type: 'video',
@@ -47,16 +49,9 @@ const CarouselSection = () => {
       title: 'COMPUTADORES PERSONALIZADOS',
       description:
         'Montamos seu PC sob medida, com processadores Ryzen ou Intel e placas de vídeo high-end, escolhidas de acordo com sua necessidade e estilo de uso.',
-      featured: false,
+      whatsappMsg: 'Olá, gostaria de montar uma máquina customizada e totalmente personalizada por mim.',
     },
   ];
-
-  const getMessageByTitle = (title: string): string => {
-    if (title.includes('GAMER')) return 'Gostaria de um orçamento para um PC Gamer.';
-    if (title.includes('PROFISSIONAIS'))
-      return 'Olá, gostaria de saber mais sobre os computadores voltados para uso profissional.';
-    return 'Olá, gostaria de montar uma máquina customizada e totalmente personalizada por mim.';
-  };
 
   return (
     <section id="luna" className="py-24 px-4 bg-gradient-to-br from-black via-black to-black">
@@ -74,14 +69,14 @@ const CarouselSection = () => {
           {carouselItems.map((item, index) => (
             <Card
               key={index}
-              className={`flex flex-col justify-between overflow-hidden rounded-3xl backdrop-blur-sm transition-all duration-500 transform hover:scale-105 ${
-                item.featured
+              className={`flex flex-col justify-between overflow-hidden rounded-3xl backdrop-blur-sm transition-all duration-500 transform hover:scale-105 h-full ${
+                item.title.includes('PROFISSIONAIS')
                   ? 'bg-black border border-orange-500/50 shadow-2xl shadow-orange-500/25'
                   : 'bg-black border border-orange-500/20 hover:border-orange-500/40'
               }`}
             >
               <CardContent className="flex flex-col flex-grow p-6">
-                {item.featured && (
+                {item.title.includes('PROFISSIONAIS') && (
                   <div className="mb-4">
                     <span className="px-3 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-black text-xs font-bold rounded-full">
                       DESTAQUE
@@ -90,7 +85,7 @@ const CarouselSection = () => {
                 )}
 
                 {/* Mídia */}
-                <div className="mb-6 h-[240px] sm:h-[300px] md:h-[350px] lg:h-[400px] rounded-2xl overflow-hidden">
+                <div className="mb-6 h-[240px] sm:h-[320px] md:h-[380px] lg:h-[440px] rounded-2xl overflow-hidden">
                   {item.type === 'video' ? (
                     <video
                       autoPlay
@@ -127,15 +122,17 @@ const CarouselSection = () => {
 
                 {/* Conteúdo */}
                 <div className="text-center flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+                  <h3 className="text-xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 min-h-[48px] flex items-center justify-center">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-300 mb-6 leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-gray-300 leading-relaxed flex-1 mb-6">
+                    {item.description}
+                  </p>
 
                   {/* Botão */}
                   <div className="mt-auto">
                     <a
-                      href={`https://hazap.com.br/redirect/?msg=${encodeURIComponent(getMessageByTitle(item.title))}`}
+                      href={`${basePath}/atendimentoWhatsapp?msg=${encodeURIComponent(item.whatsappMsg)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -145,7 +142,7 @@ const CarouselSection = () => {
                           alt="WhatsApp"
                           className="w-4 h-4 object-contain"
                         />
-                        {item.featured ? 'FALAR COM ESPECIALISTA' : 'SOLICITAR ORÇAMENTO'}
+                        {item.title.includes('PROFISSIONAIS') ? 'FALAR COM ESPECIALISTA' : 'SOLICITAR ORÇAMENTO'}
                       </Button>
                     </a>
                   </div>
@@ -153,50 +150,6 @@ const CarouselSection = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* CTA WhatsApp */}
-        <div className="mt-20 text-center">
-          <p className="text-gray-400 mb-6">
-            Quer ver mais detalhes? Fale com nossos especialistas agora mesmo!
-          </p>
-   <div className="relative max-w-max mx-auto">
-  <div className="absolute -inset-3 bg-[#25D366] rounded-full blur opacity-75 animate-pulse" />
-  <div className="absolute -inset-3 rounded-full border-4 border-[#25D366] animate-ping opacity-30" />
-  <div
-    className="absolute -inset-6 rounded-full border-4 border-[#25D366] animate-ping opacity-20"
-    style={{ animationDelay: "300ms" }}
-  />
-  <div
-    className="absolute -inset-9 rounded-full border-4 border-[#25D366] animate-ping opacity-10"
-    style={{ animationDelay: "600ms" }}
-  />
-
-           <a
-              href="https://wa.me/5519993261388?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20HAZAP"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-                           <Button className="relative w-full text-xl font-bold bg-gradient-to-r from-[#25D366] to-[#25D366] hover:from-[#25D366] hover:to-[#25D366] px-8 py-8 rounded-full border-2 border-white shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3">
-             
-                <div className="bg-white rounded-full p-1.5 ">
-                  <img
-                    src="/vendas/wpp.svg"
-                    alt="WhatsApp"
-                    className="w-4 h-4 object-contain"
-                  />
-                </div>
-                <span className="text-black whitespace-nowrap">Orçamento PC Gamer online - Região Metropolitana Campinas</span>
-                <span className="absolute -right-2 -top-3 flex h-5 w-5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-5 w-5 bg-white text-[#000] flex items-center justify-center text-xs font-bold">
-                    1
-                  </span>
-                </span>
-              </Button>
-            </a>
-          </div>
         </div>
       </div>
     </section>

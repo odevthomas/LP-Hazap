@@ -1,9 +1,7 @@
-
 'use client';
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Users } from 'lucide-react';
 
 interface HeroSectionProps {
   onShowMascotPopup: () => void;
@@ -45,21 +43,9 @@ const HeroSection = ({ onShowMascotPopup }: HeroSectionProps) => (
           do Interior
           <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700">
-             de São Paulo
+            de São Paulo
           </span>
         </h1>
-      </div>
-
-      {/* Card de especialistas online */}
-      <div className="mb-6 flex justify-center">
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg">
-          <div className="relative">
-            <Users className="w-4 h-4 text-green-400" />
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-          </div>
-          <span className="text-white text-sm font-medium">3 especialistas online</span>
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-        </div>
       </div>
 
       {/* Botão principal */}
@@ -77,17 +63,17 @@ const HeroSection = ({ onShowMascotPopup }: HeroSectionProps) => (
             style={{ animationDelay: '600ms' }}
           ></div>
 
+          {/* BOTÃO COM MENSAGEM AJUSTADA */}
           <a
-            href="https://wa.me/5519993261388?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20da%20HAZAP"
+            href="https://hazap.com.br/vendas/atendimentoWhatsapp?msg=Ol%C3%A1%2C%20tudo%20bem%3F%20Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20personalizado."
             target="_blank"
             rel="noopener noreferrer"
             className="block"
           >
             <Button
               size="lg"
-              className="relative w-full text-lg sm:text-xl font-bold bg-gradient-to-r from-[#25D366] to-[#25D366] hover:from-[#25D366] hover:to-[#25D366] px-6 py-6 sm:px-8 sm:py-8 rounded-full border-2 border-white shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
+              className="relative w-full text-lg sm:text-xl font-bold bg-gradient-to-r from-[#25D366] to-[#25D366] hover:from-[#25D366] hover:to-[#25D366] px-6 py-6 sm:px-8 sm:py-8 rounded-full border-1 border-[#25D366] shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
             >
-              {/* Ícone com tamanho controlado */}
               <div className="bg-white rounded-full p-1 sm:p-2 mr-2 flex items-center justify-center">
                 <img
                   src="/vendas/wpp.svg"
@@ -98,10 +84,10 @@ const HeroSection = ({ onShowMascotPopup }: HeroSectionProps) => (
 
               <div className="flex flex-col items-start">
                 <span className="text-xs sm:text-sm text-black font-normal">
-                  Atendimento Imediato
+                  Atendimento rápido
                 </span>
                 <span className="text-base sm:text-lg text-black font-bold">
-                  FALE COM UM ESPECIALISTA
+                  FALAR COM UM ESPECIALISTA
                 </span>
               </div>
 
@@ -113,12 +99,14 @@ const HeroSection = ({ onShowMascotPopup }: HeroSectionProps) => (
               </span>
             </Button>
           </a>
-            <div className="absolute -bottom-9 left-0 right-0 text-center">
-              <div className="inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-medium shadow-md">
-                <span className="text-green-600 font-bold text-lg">✓</span>
-                <span>3 especialistas online agora</span>
-              </div>
-              </div>
+
+          {/* Status de atendimento */}
+          <div className="absolute -bottom-7 left-0 right-0 text-center">
+            <div className="inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-medium shadow-md">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              <span>3 especialistas online agora</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

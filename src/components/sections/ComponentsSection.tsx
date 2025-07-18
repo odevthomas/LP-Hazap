@@ -6,30 +6,34 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const ComponentsSection = () => {
+  // Base path da aplicação (subpasta /vendas/)
+  const basePath = '/vendas';
+
+  // Componentes com suas mensagens para WhatsApp, sempre começando com "Olá,"
   const computerComponents = [
     {
       title: "Processadores",
       description: "Escolha o cérebro da sua máquina. Com as melhores opções da Intel e AMD, você garante velocidade e eficiência para qualquer tarefa.",
       image: "/vendas/computerComponents/processador.png",
-      whatsappMsg: "Gostaria de solicitar um orçamento de processadores, por favor."
+      whatsappMsg: "Olá, gostaria de solicitar um orçamento de processadores, por favor."
     },
     {
       title: "Placas-mãe",
       description: "Compatibilidade total e upgrade garantido. Nossas placas-mãe oferecem estabilidade, conectividade e suporte para os processadores mais atuais.",
       image: "/vendas/computerComponents/placamae.png",
-      whatsappMsg: "Gostaria de solicitar um orçamento de placas-mãe, por favor."
+      whatsappMsg: "Olá, gostaria de solicitar um orçamento de placas-mãe, por favor."
     },
     {
       title: "Placas de vídeo",
       description: "Desempenho gráfico de última geração para jogos AAA, renderizações, edição de vídeo e projetos em 3D. RTX e Radeon com garantia e suporte.",
       image: "/vendas/computerComponents/placadevideo.png",
-      whatsappMsg: "Gostaria de solicitar um orçamento de placas de vídeo, por favor."
+      whatsappMsg: "Olá, gostaria de solicitar um orçamento de placas de vídeo, por favor."
     },
     {
       title: "Acessórios Gamer",
       description: "Teclados mecânicos, mouses com alta precisão, headsets com som imersivo e cadeiras ergonômicas. Tudo para melhorar sua gameplay.",
       image: "/vendas/computerComponents/acessorios.png",
-      whatsappMsg: "Gostaria de solicitar um orçamento de acessórios gamer, por favor."
+      whatsappMsg: "Olá, gostaria de solicitar um orçamento de acessórios gamer, por favor."
     }
   ];
 
@@ -71,8 +75,9 @@ const ComponentsSection = () => {
                               </p>
                             </div>
 
+                            {/* Link redireciona para a página interna que faz o redirecionamento para WhatsApp */}
                             <a
-                              href={`https://wa.me/5519993261388?text=${encodeURIComponent(component.whatsappMsg)}`}
+                              href={`${basePath}/atendimentoWhatsapp?msg=${encodeURIComponent(component.whatsappMsg)}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="mt-auto"
