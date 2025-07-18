@@ -1,6 +1,11 @@
-# Projeto Vendas Hazap
+
+# LP Vendas Hazap
+
+
+<img width="1920" height="1080" alt="7" src="https://github.com/user-attachments/assets/85d59618-c729-498d-995c-6140bfb02047" />
 
 ---
+
 
 ## Visão Geral
 
@@ -53,114 +58,113 @@ O objetivo principal é oferecer uma experiência digital focada em:
 ├── package.json              # Dependências e scripts
 ├── tailwind.config.js        # Configuração do Tailwind CSS
 └── README.md                 # Este arquivo
+````
 
-Funcionalidades Principais
-1. HeroSection (Seção inicial)
-Vídeo de fundo com overlay em degrade para foco no conteúdo.
+---
 
-Logo e slogan com texto em gradiente para destaque visual.
+## Funcionalidades Principais
 
-Botão chamativo para contato via WhatsApp, com efeitos visuais (pulse).
+### 1. HeroSection (Seção inicial)
 
-Contador dinâmico mostrando tempo de resposta estimado dos especialistas.
+* Vídeo de fundo com overlay em degrade para foco no conteúdo.
+* Logo e slogan com texto em gradiente para destaque visual.
+* Botão chamativo para contato via WhatsApp, com efeitos visuais (pulse).
+* Contador dinâmico mostrando tempo de resposta estimado dos especialistas.
+* Mensagem de especialistas online com status em tempo real.
+* Layout 100% responsivo com ajustes para telas de diferentes tamanhos.
 
-Mensagem de especialistas online com status em tempo real.
+### 2. CarouselSection (Seção de produtos)
 
-Layout 100% responsivo com ajustes para telas de diferentes tamanhos.
+* Apresentação em cards com vídeo ou galeria de imagens.
+* Destaques dos diferenciais dos PCs em tópicos claros com ícones.
+* Botões de ação para contato direto via WhatsApp com mensagem personalizada.
+* Carrossel customizado para navegação intuitiva entre imagens.
+* Foco na clareza, legibilidade e estética moderna.
 
-2. CarouselSection (Seção de produtos)
-Apresentação em cards com vídeo ou galeria de imagens.
+### 3. AtendimentoWhatsapp (Página de redirecionamento)
 
-Destaques dos diferenciais dos PCs em tópicos claros com ícones.
+* Redireciona automaticamente para WhatsApp com mensagem pré-formatada.
+* Contador regressivo visível para informar o usuário.
+* Opção manual para abrir o WhatsApp se o redirecionamento automático não ocorrer.
+* Layout minimalista, acessível e totalmente responsivo.
+* Informações de segurança e confidencialidade reforçadas no rodapé.
 
-Botões de ação para contato direto via WhatsApp com mensagem personalizada.
+---
 
-Carrossel customizado para navegação intuitiva entre imagens.
+## Como Rodar o Projeto Localmente
 
-Foco na clareza, legibilidade e estética moderna.
+### Requisitos
 
-3. AtendimentoWhatsapp (Página de redirecionamento)
-Redireciona automaticamente para WhatsApp com mensagem pré-formatada.
+* Node.js >= 18
+* Yarn ou npm
+* Git
 
-Contador regressivo visível para informar o usuário.
+### Passos
 
-Opção manual para abrir o WhatsApp se o redirecionamento automático não ocorrer.
-
-Layout minimalista, acessível e totalmente responsivo.
-
-Informações de segurança e confidencialidade reforçadas no rodapé.
-
-Como Rodar o Projeto Localmente
-Requisitos
-Node.js >= 18
-
-Yarn ou npm
-
-Git
-
-Passos
 Clone o repositório:
 
-bash
-Copiar
-Editar
+```bash
 git clone https://github.com/seu-usuario/hazap-vendas.git
 cd hazap-vendas
+```
+
 Instale as dependências:
 
-bash
-Copiar
-Editar
+```bash
 yarn install
 # ou
 npm install
+```
+
 Inicie o servidor de desenvolvimento:
 
-bash
-Copiar
-Editar
+```bash
 yarn dev
 # ou
 npm run dev
-Abra no navegador: http://localhost:3000
+```
 
-Build e Deploy
+Abra no navegador: `http://localhost:3000`
+
+---
+
+## Build e Deploy
+
 Para gerar a versão de produção (build otimizado):
 
-bash
-Copiar
-Editar
+```bash
 yarn build
 # ou
 npm run build
-O build será gerado na pasta dist (ou .next no Next.js).
+```
+
+O build será gerado na pasta `dist` (ou `.next` no Next.js).
 
 Para criar o arquivo zip do build no Ubuntu:
 
-bash
-Copiar
-Editar
+```bash
 zip -r hazap-vendas-dist.zip dist/
+```
+
 Faça deploy na plataforma escolhida (Vercel, AWS, Netlify, etc), configurando seu domínio e certificados SSL.
 
-SEO e Conversão
-Uso de meta tags otimizadas para título, descrição, palavras-chave e Open Graph.
+---
 
-Implementação de Schema.org via JSON-LD para estruturação dos dados e melhor indexação.
+## SEO e Conversão
 
-Páginas com conteúdo textual relevante e atualizado.
+* Uso de meta tags otimizadas para título, descrição, palavras-chave e Open Graph.
+* Implementação de Schema.org via JSON-LD para estruturação dos dados e melhor indexação.
+* Páginas com conteúdo textual relevante e atualizado.
+* Botões de ação claros e persistentes, com mensagens personalizadas no WhatsApp para agilizar o atendimento.
+* Monitoramento via Google Tag Manager para rastrear cliques e conversões.
+* Layout responsivo e acessível para manter usuários engajados e reduzir taxa de rejeição.
 
-Botões de ação claros e persistentes, com mensagens personalizadas no WhatsApp para agilizar o atendimento.
+---
 
-Monitoramento via Google Tag Manager para rastrear cliques e conversões.
+## Acessibilidade
 
-Layout responsivo e acessível para manter usuários engajados e reduzir taxa de rejeição.
+* Uso de roles e labels ARIA nos elementos importantes.
+* Contraste alto e cores pensadas para fácil leitura.
+* Navegação por teclado e foco visível.
+* Alternativas para imagens (alt text) e carregamento otimizado.
 
-Acessibilidade
-Uso de roles e labels ARIA nos elementos importantes.
-
-Contraste alto e cores pensadas para fácil leitura.
-
-Navegação por teclado e foco visível.
-
-Alternativas para imagens (alt text) e carregamento otimizado.
