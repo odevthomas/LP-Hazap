@@ -1,163 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vendas Hazap - Melhor Loja de Computadores do Interior de SP</title>
-    <meta
-      name="description"
-      content="HAZAP - A melhor loja de computadores do Interior de São Paulo. PCs Gamer, PCs para Profissões e PCs Personalizados com os melhores componentes."
-    />
-    <meta
-      name="keywords"
-      content="computadores, pc gamer, hardware, processadores, placas de vídeo, são paulo, interior, hazap, loja de informática"
-    />
-    <meta name="author" content="Thomas Eduardo - odevthomas" />
-    <meta name="robots" content="index, follow" />
+<head>
+  <!-- ... seus meta tags, links, schema, GTM script ... -->
 
-    <!-- Favicon -->
-    <link rel="icon" href="/vendas/hazap-logo.jpeg" type="image/x-icon" />
-    <link rel="shortcut icon" href="/vendas/hazap-logo.jpeg" type="image/x-icon" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/vendas/hazap-logo.jpeg" />
+  <!-- Meta Pixel JS -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1025024922033103');
+    fbq('track', 'PageView');
+  </script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2Q8J3J5" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
 
-    <!-- Open Graph -->
-    <meta
-      property="og:title"
-      content="HAZAP - Melhor Loja de Computadores do Interior de SP"
-    />
-    <meta
-      property="og:description"
-      content="PCs Gamer, PCs para Profissões e PCs Personalizados com os melhores componentes do mercado."
-    />
-    <meta property="og:image" content="https://hazap.com.br/images/hazap-logo.jpeg" />
-    <meta property="og:url" content="https://hazap.com.br/vendas/" />
-    <meta property="og:type" content="website" />
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HAZAP - Loja de Computadores Gamer e Profissionais" />
-    <meta
-      name="twitter:description"
-      content="Monte seu PC com componentes de qualidade, atendimento especializado e entrega para todo o Brasil."
-    />
-    <meta name="twitter:image" content="https://hazap.com.br/images/hazap-logo.jpeg" />
+  <!-- Meta Pixel NoScript (mova para cá!) -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1025024922033103&ev=PageView&noscript=1" />
+  </noscript>
 
-    <!-- Schema.org: Organization -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Hazap Computadores",
-        "url": "https://hazap.com.br",
-        "logo": "https://hazap.com.br/images/hazap-logo.jpeg",
-        "sameAs": [
-          "https://www.instagram.com/hazaptech",
-          "https://www.facebook.com/hazaptech"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+55-19-99326-1388",
-          "contactType": "customer support",
-          "areaServed": "BR",
-          "availableLanguage": ["Portuguese", "English"]
-        }
-      }
-    </script>
-
-    <!-- Schema.org: WebPage -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Vendas Hazap",
-        "url": "https://hazap.com.br/vendas/",
-        "description": "Página de vendas da Hazap: computadores gamer, estações profissionais e PCs personalizados.",
-        "inLanguage": "pt-BR",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Hazap Computadores"
-        }
-      }
-    </script>
-
-    <!-- Schema.org: Product (exemplo de um produto) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "PC Gamer Hazap Ryzen 7 + RTX 4060",
-        "image": "https://hazap.com.br/vendas/seupc/pcgamer.jpg",
-        "description": "Computador Gamer completo com Ryzen 7, 16GB RAM, SSD 1TB e RTX 4060. Ideal para jogar GTA 6, Valorant, LoL e muito mais.",
-        "brand": {
-          "@type": "Brand",
-          "name": "Hazap"
-        },
-        "sku": "HZP-R7-RTX4060",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://hazap.com.br/vendas/",
-          "priceCurrency": "BRL",
-          "price": "6299.00",
-          "itemCondition": "https://schema.org/NewCondition",
-          "availability": "https://schema.org/InStock",
-          "seller": {
-            "@type": "Organization",
-            "name": "Hazap Computadores"
-          }
-        }
-      }
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-T2Q8J3J5");
-    </script>
-    <!-- End Google Tag Manager -->
-  </head>
-  <body>
-    <!-- Desenvolvido por Thomas Eduardo (odevthoas) -->
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-T2Q8J3J5"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"
-        ></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-
-    <!-- Clique no WhatsApp (evento de conversão) -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const whatsappButtons = document.querySelectorAll(
-          'a[href*="wa.me"], a[href*="hazap.com.br/redirect"], a[href*="/atendimentoWhatsapp"]'
-        );
-        whatsappButtons.forEach((btn) => {
-          btn.addEventListener("click", function () {
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push({
-              event: "conversion",
-              category: "whatsapp_click",
-              action: "clique_whatsapp",
-              label: this.href,
-            });
+  <!-- Clique no WhatsApp (evento de conversão) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const whatsappButtons = document.querySelectorAll(
+        'a[href*="wa.me"], a[href*="hazap.com.br/redirect"], a[href*="/atendimentoWhatsapp"]'
+      );
+      whatsappButtons.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          window.dataLayer = window.dataLayer || [];
+          dataLayer.push({
+            event: "conversion",
+            category: "whatsapp_click",
+            action: "clique_whatsapp",
+            label: this.href,
           });
         });
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>

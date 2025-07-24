@@ -46,14 +46,14 @@ const HeroSection = ({ onShowMascotPopup }: HeroSectionProps) => {
             className="h-28 sm:h-36 md:h-44 mx-auto mb-8 drop-shadow-2xl"
           />
 
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-8 text-twhite from-white via-red-400 to-white leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-8 text-twhite from-white via-red-500 to-white leading-tight">
             Eleita{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
               a melhor loja de informática{' '}
             </span>{' '}
             do Interior
             <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
               de São Paulo
             </span>
           </h1>
